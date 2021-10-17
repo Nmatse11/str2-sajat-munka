@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body {
+    background-color: #81a7efb7;
+}
+
+#header {
+    height: auto;
+    width: auto;
+    background-image: url("../img/hatter.png");
+    background-color: #81a7efb7;
+    border: 2px solid #81a7efb7;
+    border-radius: 5px;
+    padding: 50px 0 50px 10px;
+}
+
+#header .logo {
+    font-family: "Ephesis", Arial, Helvetica, sans-serif;
+    color: rgb(44, 43, 43);
+    text-align: left;
+    font-size: 6rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 0 0 10px;
+}
+
+nav ul {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(44, 43, 43);
+    border: 2px solid rgb(44, 43, 43);
+    border-radius: 5px;
+
+}
+
+nav li {
+    display: inline-block;
+    font-weight: bold;
+}
+
+nav li a {
+    font-size: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+footer {
+    background-color: rgb(44, 43, 43);
+    border: 2px solid rgb(44, 43, 43);
+    border-radius: 5px;
+    height: auto;
+    width: auto;
+    padding: 50px 0 50px 10px;
+}
+
+footer .top {
+    color: white;
+    text-decoration: none;
+    padding: 0 0 0 10px;
+    font-size: 20px;
+}
+
+.main {
+    padding: 20px 10px 20px 10px;
+}
+
+.section {
+    background-color: rgba(214, 229, 255, 0.918);
+    padding: 10px;
+}
+
+.section h1 {
+    font-family: "Lobster", Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.article {
+    padding: 10px;
+}
+
+.article p {
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.article h2 {
+    font-size: 2.5rem;
+}
+
+.post {
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+}
+
+.post ul {
+    padding: 0 20px 0 370px;
+}
+
+
+.post li {
+    font-size: 18px;
+    line-height: 150%;
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+}
+
+.post h2 {
+    margin: 10px;
+    font-size: 2.5rem;
+}
+
+.post p {
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 150%;
+    padding: 0 10px 0 350px;
+}
+
+.works img {
+    width: 300px;
+    float: left;
+    margin: 30px 40px 0 10px;
+}
+
+.image {
+    text-align: center;
+}
+
+.image img {
+    display: inline block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 120px 30px 120px;
+}
+
+.box div {
+    background-color: #81a7efb7;
+    border: 2px solid rgb(44, 43, 43);
+    border-radius: 5px;
+    border-style: solid;
+    width: 30%;
+    margin: 20px;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.box div:hover {
+    background-color: #aac1ecb7;
+}
+
+.box h4 {
+    font-family: "Amarante", Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.75rem;
+}
+
+.gallery {
+    text-align: center;
+    margin: 0 25%;
+}
+
+.gallery img {
+    box-shadow: 5px 5px #888888;
+    margin: 10px;
+    border: 2px solid rgb(161, 158, 158);
+    width: 200px;
+    height: 300px;
+}
+
+.gallery img:hover {
+    border: 2px solid #777;
+}
+
+.about img {
+    width: 200px;
+    float: left;
+    margin: 30px 40px 0 10px;
+}
+
+.about {
+    padding: 20px;
+}
+
+.about p {
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.about ul {
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.about ol {
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.about h2 {
+    font-size: 2rem;
+}
+
+div.citation p {
+    font-family: "Itim", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 0 60px;
+}
+
+.form {
+    background-color: rgba(214, 229, 255, 0.918);
+    padding: 10px;
+    margin: 0 10px 20px 10px;
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.form p {
+    margin: 10px;
+    padding: 10px;
+}
+
+.form h3 {
+    text-align: justify;
+}
+
+.form h6 {
+    margin: 0 20px;
+}
+
+
+input[type="text"],
+select {
+    width: 300px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+textarea {
+    width: 600px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+input[type="button"] {
+    width: 10%;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 5px;
+    font-family: "Cairo:wght@300", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+#submit:hover {
+    background-color: #111;
+}
+
+input:invalid:focus {
+    background-color: #dbd8d8;
+}
+
+textarea:invalid:focus {
+    background-color: #dbd8d8;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+    #header {
+        padding: 5px;
+    }
+
+    #header .logo {
+        font-size: 4rem;
+    }
+
+    .main {
+        padding: 5px;
+    }
+
+    .section {
+        padding: 5px;
+    }
+
+    .section h1 {
+        font-size: 2rem;
+    }
+     
+    nav li a {
+        font-size: 16px; 
+        padding: 10px 12px; 
+    }
+
+    .article p {
+        font-size: 18px;
+    }
+
+    .image img {
+        width: 40%;
+        margin: 5px;
+    }
+
+    .box {
+        margin: 5px 0 5px 0;
+    }
+
+    .box div {
+        align-self: center;
+        width: 60%;
+        min-width: 1em;
+    }
+
+    .box h4 {
+        font-size: 4vw;
+    }
+
+    .article h2 {
+        font-size: 1.75rem;
+    }
+
+    .post {
+        margin: 5px;
+    }
+
+    .post h2 {
+        font-size: 1.75rem;
+    }
+
+    .post ul {
+        padding: 5px 20px;
+    }
+
+    .post li {
+        font-size: 16px;
+    }
+
+    .post p {
+        font-size: 16px;
+        padding: 0 10px 0 10px;
+    }
+
+    .works {
+        text-align: center;
+    }
+
+    .works img {
+        width: 50%;
+        float: none;
+        margin: 0 50px 0 50px;
+    }
+
+    .about {
+        padding: 5px;
+    }
+
+
+    .gallery img {
+        width: 150px;
+        height: 225px;
+    }
+
+
+    .article li {
+        font-size: 4vw;
+    }
+
+    .gallery {
+        margin: 0 10px;
+    }
+
+    .about img {
+        width: 40%;
+        margin: 0 70% 20px 0;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .about ul {
+        font-size: 16px;
+    }
+
+    .about ol {
+        font-size: 16px;
+    }
+
+    div.citation p {
+        padding: 0 10px;
+    }
+
+
+    input[type="text"],
+    select {
+        width: 70%;
+    }
+
+    textarea {
+        width: 90%;
+    }
+
+    input[type="button"] {
+        width: 30%;
+    }
+}
