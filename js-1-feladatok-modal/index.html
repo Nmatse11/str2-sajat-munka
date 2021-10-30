@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/main.css">
+    <title>Document</title>
+</head>
+
+<header>
+    <h1>JavaScript 1. feladat</h1>
+</header>
+
+<body>
+    <h2>Modal készítése</h2>
+    <h4>Háttér oldal</h4>
+    <section>
+        <button id="modal-btn">Modal</button>
+
+        <div class="modal__page">
+            <div class="modal">
+                <span class="close-btn">&times;</span>
+                <div class="modal-header">
+                    <h1>CSSScript.com</h1>
+                </div>
+                <div class="modal-content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla ex vel congue
+                        molestie.
+                        Sed at iaculis tellus. Sed lacinia, velit non varius congue, leo diam vestibulum risus, vel
+                        venenatis sem arcu non lacus. Proin posuere ligula sit amet sapien aliquam dignissim. Donec
+                        porttitor fermentum risus non volutpat. Sed euismod lobortis mauris nec sollicitudin. Donec id
+                        justo
+                        et ante ullamcorper accumsan. Phasellus sollicitudin accumsan quam, in euismod leo facilisis at.
+                        Etiam condimentum libero vel dolor mattis, sit amet dignissim mi pharetra. Proin lobortis
+                        facilisis lacus efficitur commodo. Nam hendrerit ante sed risus semper, vitae rhoncus mi
+                        aliquam. Donec ut nisi at mauris ullamcorper vehicula eu id risus. Morbi interdum lobortis
+                        sapien nec consequat. Nullam vel viverra metus. Integer ac tortor efficitur, sodales nisl id,
+                        pellentesque mauris. Nam at auctor ante. Sed sit amet elementum urna. Donec rutrum ullamcorper
+                        lectus, id dapibus felis sodales quis. Nullam tortor arcu, tempor sit amet felis eu, rutrum
+                        malesuada felis. Aenean blandit varius augue ut congue. Vestibulum ante ipsum primis in faucibus
+                        orci luctus et ultrices posuere cubilia curae; Duis lacinia placerat justo ac porta. Nunc id mi
+                        lorem. Quisque lectus orci, pretium sed mauris id, ultrices luctus mauris.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="close-btn cancel-btn">Cancel</button>
+                    <button class="close-btn okey-btn">Okey</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla ex vel congue molestie.
+                Sed at iaculis tellus. Sed lacinia, velit non varius congue, leo diam vestibulum risus, vel
+                venenatis sem arcu non lacus. Proin posuere ligula sit amet sapien aliquam dignissim. Donec
+                porttitor fermentum risus non volutpat. Sed euismod lobortis mauris nec sollicitudin. Donec id justo
+                et ante ullamcorper accumsan. Phasellus sollicitudin accumsan quam, in euismod leo facilisis at.
+            </p>
+            <p>
+                Nunc laoreet nisi in felis ornare, non commodo sem porttitor. Vivamus fermentum nibh eu libero
+                blandit, eget auctor lectus ullamcorper. Proin quis gravida tortor. Pellentesque ut dignissim elit.
+                Curabitur elementum ipsum turpis, ut elementum purus feugiat sit amet. Proin eget ultricies eros.
+                Phasellus rhoncus feugiat diam, vitae ullamcorper tellus tincidunt ac. Pellentesque nec rhoncus
+                velit. Fusce et magna venenatis, tempor lorem a, aliquet lectus. Nulla facilisi.
+            </p>
+            <p>
+                Proin pretium dolor condimentum laoreet mattis. Nam sit amet sodales felis. Nulla convallis neque a
+                congue dignissim. Quisque sollicitudin lectus elit, nec pulvinar ligula laoreet quis. Integer
+                venenatis, turpis ut malesuada tincidunt, risus ex viverra arcu, sed interdum dolor sem a metus.
+                Nullam faucibus iaculis nisl, nec hendrerit ante ullamcorper non. Pellentesque a nisl vitae lacus
+                dapibus mollis vel ac dui. Donec ac elit felis.
+            </p>
+            <p>
+                Morbi eleifend sem et dolor ullamcorper, id luctus sapien aliquet. In sapien quam, rutrum eu tempor
+                ut, hendrerit in nisl. Etiam cursus erat at feugiat molestie. Etiam varius dignissim elit at
+                lacinia. Phasellus eleifend dui eget nibh pharetra viverra. Suspendisse vehicula elementum augue eu
+                feugiat. Phasellus bibendum mauris vel augue lacinia, eget tincidunt lorem accumsan. Curabitur
+                hendrerit lectus nec ante consectetur, sit amet pharetra nulla finibus. In elementum feugiat
+                venenatis. Suspendisse vel enim non erat congue rutrum eget ultrices magna. Maecenas interdum at sem
+                rhoncus consectetur. Cras sapien magna, mattis ut laoreet vitae, semper eu neque. Praesent quis
+                molestie purus. Proin et molestie arcu. Donec est risus, lobortis sed diam quis, dignissim egestas
+                nisi. Etiam euismod convallis arcu, in vulputate purus egestas a.
+            </p>
+            <p>
+                Etiam condimentum libero vel dolor mattis, sit amet dignissim mi pharetra. Proin lobortis facilisis
+                lacus efficitur commodo. Nam hendrerit ante sed risus semper, vitae rhoncus mi aliquam. Donec ut
+                nisi at mauris ullamcorper vehicula eu id risus. Morbi interdum lobortis sapien nec consequat.
+                Nullam vel viverra metus. Integer ac tortor efficitur, sodales nisl id, pellentesque mauris. Nam at
+                auctor ante. Sed sit amet elementum urna. Donec rutrum ullamcorper lectus, id dapibus felis sodales
+                quis. Nullam tortor arcu, tempor sit amet felis eu, rutrum malesuada felis. Aenean blandit varius
+                augue ut congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Duis lacinia placerat justo ac porta. Nunc id mi lorem. Quisque lectus orci, pretium sed
+                mauris id, ultrices luctus mauris.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla ex vel congue molestie.
+                Sed at iaculis tellus. Sed lacinia, velit non varius congue, leo diam vestibulum risus, vel
+                venenatis sem arcu non lacus. Proin posuere ligula sit amet sapien aliquam dignissim. Donec
+                porttitor fermentum risus non volutpat. Sed euismod lobortis mauris nec sollicitudin. Donec id justo
+                et ante ullamcorper accumsan. Phasellus sollicitudin accumsan quam, in euismod leo facilisis at.
+            </p>
+            <p>
+                Nunc laoreet nisi in felis ornare, non commodo sem porttitor. Vivamus fermentum nibh eu libero
+                blandit, eget auctor lectus ullamcorper. Proin quis gravida tortor. Pellentesque ut dignissim elit.
+                Curabitur elementum ipsum turpis, ut elementum purus feugiat sit amet. Proin eget ultricies eros.
+                Phasellus rhoncus feugiat diam, vitae ullamcorper tellus tincidunt ac. Pellentesque nec rhoncus
+                velit. Fusce et magna venenatis, tempor lorem a, aliquet lectus. Nulla facilisi.
+            </p>
+            <p>
+                Proin pretium dolor condimentum laoreet mattis. Nam sit amet sodales felis. Nulla convallis neque a
+                congue dignissim. Quisque sollicitudin lectus elit, nec pulvinar ligula laoreet quis. Integer
+                venenatis, turpis ut malesuada tincidunt, risus ex viverra arcu, sed interdum dolor sem a metus.
+                Nullam faucibus iaculis nisl, nec hendrerit ante ullamcorper non. Pellentesque a nisl vitae lacus
+                dapibus mollis vel ac dui. Donec ac elit felis.
+            </p>
+            <p>
+                Morbi eleifend sem et dolor ullamcorper, id luctus sapien aliquet. In sapien quam, rutrum eu tempor
+                ut, hendrerit in nisl. Etiam cursus erat at feugiat molestie. Etiam varius dignissim elit at
+                lacinia. Phasellus eleifend dui eget nibh pharetra viverra. Suspendisse vehicula elementum augue eu
+                feugiat. Phasellus bibendum mauris vel augue lacinia, eget tincidunt lorem accumsan. Curabitur
+                hendrerit lectus nec ante consectetur, sit amet pharetra nulla finibus. In elementum feugiat
+                venenatis. Suspendisse vel enim non erat congue rutrum eget ultrices magna. Maecenas interdum at sem
+                rhoncus consectetur. Cras sapien magna, mattis ut laoreet vitae, semper eu neque. Praesent quis
+                molestie purus. Proin et molestie arcu. Donec est risus, lobortis sed diam quis, dignissim egestas
+                nisi. Etiam euismod convallis arcu, in vulputate purus egestas a.
+            </p>
+            <p>
+                Etiam condimentum libero vel dolor mattis, sit amet dignissim mi pharetra. Proin lobortis facilisis
+                lacus efficitur commodo. Nam hendrerit ante sed risus semper, vitae rhoncus mi aliquam. Donec ut
+                nisi at mauris ullamcorper vehicula eu id risus. Morbi interdum lobortis sapien nec consequat.
+                Nullam vel viverra metus. Integer ac tortor efficitur, sodales nisl id, pellentesque mauris. Nam at
+                auctor ante. Sed sit amet elementum urna. Donec rutrum ullamcorper lectus, id dapibus felis sodales
+                quis. Nullam tortor arcu, tempor sit amet felis eu, rutrum malesuada felis. Aenean blandit varius
+                augue ut congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Duis lacinia placerat justo ac porta. Nunc id mi lorem. Quisque lectus orci, pretium sed
+                mauris id, ultrices luctus mauris.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla ex vel congue molestie.
+                Sed at iaculis tellus. Sed lacinia, velit non varius congue, leo diam vestibulum risus, vel
+                venenatis sem arcu non lacus. Proin posuere ligula sit amet sapien aliquam dignissim. Donec
+                porttitor fermentum risus non volutpat. Sed euismod lobortis mauris nec sollicitudin. Donec id justo
+                et ante ullamcorper accumsan. Phasellus sollicitudin accumsan quam, in euismod leo facilisis at.
+            </p>
+            <p>
+                Nunc laoreet nisi in felis ornare, non commodo sem porttitor. Vivamus fermentum nibh eu libero
+                blandit, eget auctor lectus ullamcorper. Proin quis gravida tortor. Pellentesque ut dignissim elit.
+                Curabitur elementum ipsum turpis, ut elementum purus feugiat sit amet. Proin eget ultricies eros.
+                Phasellus rhoncus feugiat diam, vitae ullamcorper tellus tincidunt ac. Pellentesque nec rhoncus
+                velit. Fusce et magna venenatis, tempor lorem a, aliquet lectus. Nulla facilisi.
+            </p>
+            <p>
+                Proin pretium dolor condimentum laoreet mattis. Nam sit amet sodales felis. Nulla convallis neque a
+                congue dignissim. Quisque sollicitudin lectus elit, nec pulvinar ligula laoreet quis. Integer
+                venenatis, turpis ut malesuada tincidunt, risus ex viverra arcu, sed interdum dolor sem a metus.
+                Nullam faucibus iaculis nisl, nec hendrerit ante ullamcorper non. Pellentesque a nisl vitae lacus
+                dapibus mollis vel ac dui. Donec ac elit felis.
+            </p>
+            <p>
+                Morbi eleifend sem et dolor ullamcorper, id luctus sapien aliquet. In sapien quam, rutrum eu tempor
+                ut, hendrerit in nisl. Etiam cursus erat at feugiat molestie. Etiam varius dignissim elit at
+                lacinia. Phasellus eleifend dui eget nibh pharetra viverra. Suspendisse vehicula elementum augue eu
+                feugiat. Phasellus bibendum mauris vel augue lacinia, eget tincidunt lorem accumsan. Curabitur
+                hendrerit lectus nec ante consectetur, sit amet pharetra nulla finibus. In elementum feugiat
+                venenatis. Suspendisse vel enim non erat congue rutrum eget ultrices magna. Maecenas interdum at sem
+                rhoncus consectetur. Cras sapien magna, mattis ut laoreet vitae, semper eu neque. Praesent quis
+                molestie purus. Proin et molestie arcu. Donec est risus, lobortis sed diam quis, dignissim egestas
+                nisi. Etiam euismod convallis arcu, in vulputate purus egestas a.
+            </p>
+            <p>
+                Etiam condimentum libero vel dolor mattis, sit amet dignissim mi pharetra. Proin lobortis facilisis
+                lacus efficitur commodo. Nam hendrerit ante sed risus semper, vitae rhoncus mi aliquam. Donec ut
+                nisi at mauris ullamcorper vehicula eu id risus. Morbi interdum lobortis sapien nec consequat.
+                Nullam vel viverra metus. Integer ac tortor efficitur, sodales nisl id, pellentesque mauris. Nam at
+                auctor ante. Sed sit amet elementum urna. Donec rutrum ullamcorper lectus, id dapibus felis sodales
+                quis. Nullam tortor arcu, tempor sit amet felis eu, rutrum malesuada felis. Aenean blandit varius
+                augue ut congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Duis lacinia placerat justo ac porta. Nunc id mi lorem. Quisque lectus orci, pretium sed
+                mauris id, ultrices luctus mauris.
+            </p>
+        </div>
+    </section>
+
+
+</body>
+<script>
+    'use strict';
+
+    let modalPage = document.querySelector(".modal__page");
+    let modal = document.querySelector(".modal");
+    let modalBtn = document.getElementById("modal-btn");
+    let closeBtn = document.querySelectorAll(".close-btn")
+
+    modalBtn.onclick = () => {
+        modal.classList.add("animation-open");
+        modal.style.display = "block";
+        modalPage.style.display = "block";
+        setTimeout (function () {
+        modal.classList.remove("animation-open");
+        }, 1500);
+    };
+    
+    closeBtn.forEach (function(element) {
+        element.addEventListener ('click', closeClick);
+    });
+    
+    function closeClick() {
+         modal.classList.add("animation-close");
+         setTimeout (function () {
+             modal.style.display = "none";
+             modalPage.style.display = "none";
+             modal.classList.remove("animation-close");
+         }, 1250);
+        }
+        
+        
+    window.addEventListener('click', outsideClick);
+
+    function outsideClick(event) {
+        if (event.target == modalPage) {
+            modal.style.display = 'none';
+            modalPage.style.display = 'none';
+        }
+    }
+
+</script>
+</body>
+
+</html>
