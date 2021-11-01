@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+    <button id="newGame-btn">New Game</button>
+    <p class="player">It's Player <span id="player">X</span>'s turn.</p>
+    <div class="game">
+        <table>
+            <tr>
+                <td><div class="cell border-top-left"></div></td>
+                <td><div class="cell"></div></td>
+                <td><div class="cell border-top-right"></div></td>
+            </tr>
+            <tr>
+                <td><div class="cell"></div></td>
+                <td><div class="cell"></div></td>
+                <td><div class="cell"></div></td>
+            </tr>
+            <tr>
+                <td><div class="cell border-bottom-left"></div></td>
+                <td><div class="cell"></div></td>
+                <td><div class="cell border-bottom-right"></div></td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2 id="message">Player <span id="winner">?</span> wins</h2>
+    <script src="./assets/main.js" defer></script>
+</body>
+</html>
