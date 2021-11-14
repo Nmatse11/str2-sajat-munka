@@ -1,0 +1,255 @@
+body {
+  background-color: rgba(153, 218, 218, 0.973);
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameText {
+  color: rgb(128, 128, 128);
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+.gameBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 25rem;
+  margin-right: 25rem;
+  flex-wrap: wrap;
+}
+
+.gameBoard-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 18rem;
+  margin-right: 18rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  width: 8rem;
+  height: 10rem;
+  margin: 0.6rem;
+}
+
+.card-more {
+  display: flex;
+  width: 7rem;
+  height: 9rem;
+  margin: 0.6rem;
+}
+
+
+.card-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-front {
+  background-image: url("../img/green.png");
+}
+
+.card-back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-match {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: flip-back 0.55s ease-in-out;
+  -webkit-animation: flip-back 0.55s ease-in-out;
+}
+
+
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: flip-front 0.3s ease-in-out;
+  -webkit-animation: flip-front 0.3s ease-in-out;
+}
+
+@-webkit-keyframes flip-front {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flip-front {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes flip-back {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flip-back {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .gameBoard {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .gameBoard-more {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .gameBoard {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .gameBoard-more {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 6rem;
+    height: 8rem;
+    margin: 0.4rem;
+  }
+
+  .card-more {
+    width: 6rem;
+    height: 8rem;
+    margin: 0.4rem;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 5rem;
+    height: 7rem;
+    margin: 0.3rem;
+  }
+
+  .card-more {
+    width: 5rem;
+    height: 7rem;
+    margin: 0.4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .gameBoard {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+  }
+
+  .card {
+    width: 4rem;
+    height: 6rem;
+    margin: 0.3rem;
+  }
+
+  .card-more {
+    width: 4rem;
+    height: 6rem;
+    margin: 0.2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+}
