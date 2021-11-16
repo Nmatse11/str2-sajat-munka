@@ -54,23 +54,35 @@ const clickHandler = () => {
 clickHandler()
 
 const addbits = (string) => {
-      string = string.match(/[x ÷ + -]*(\.\d+|\d+(\.\d+)?)/g) || []
-      total = parseFloat(string.shift())
-      for (let j = 0; j < string.length; j++) {
-        if (string[j].startsWith('+') == true) {
-          total = total + parseFloat(string[j].substring(1))
-        }
-        if (string[j].startsWith('-') == true) {
-            total = total - parseFloat(string[j].substring(1))
-        }
-        if (string[j].startsWith('x') == true) {
-            total = total * parseFloat(string[j].substring(1))
-        }
-        if (string[j].startsWith('÷') == true) {
-          total = total / parseFloat(string[j].substring(1))
-        }
-      }
-  return total
+  string = string.match(/[x ÷ + -]*(\.\d+|\d+(\.\d+)?)/g) || []
+  total = parseFloat(string.shift())
+  for (let j = 0; j < string.length; j++) {
+    if (string[j].startsWith('+') == true) {
+      total = total + parseFloat(string[j].substring(1))
+    }
+    if (string[j].startsWith('-') == true) {
+        total = total - parseFloat(string[j].substring(1))
+    }
+    if (string[j].startsWith('x') == true) {
+        total = total * parseFloat(string[j].substring(1))
+    }
+    if (string[j].startsWith('÷') == true) {
+      total = total / parseFloat(string[j].substring(1))
+    }
+    if (string[j].startsWith('-+') == true) {
+      total = "NaN"
+    }
+    if (string[j].startsWith('+-') == true) {
+        total = "NaN"
+    }
+    if (string[j].startsWith('++') == true) {
+      total = "NaN"
+    }
+    if (string[j].startsWith('--') == true) {
+      total = "NaN"
+    }
+}
+return total
 }
 
 
