@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Thrones Characters</title>
+  <link rel="stylesheet" href="./css/got.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+
+<body>
+  <div class="board"></div>
+  <div class="aside">
+    <h2>Game of Thrones</h2>
+    <div class="notFound">Character not found</div>
+    <div class="divPicture"></div>
+    <div class="info"></div>
+    <div class="bio"></div>
+    <div class="org"></div>
+    <div class="search">
+      <div class="search">
+        <i class="far fa-caret-square-right"></i>
+        <input class="input" type="text" placeholder="Search for a character">
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { getList } from './js/got.js'
+  </script>
+</body>
+
+</html>

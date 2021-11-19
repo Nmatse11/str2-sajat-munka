@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+@font-face {
+  font-family: gameOfThrones;
+  src: url('../fonts/GameofThrones.ttf');
+}
+
+body {
+  background-image: url("../assets/site/mapblue.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+  margin: 0px;
+}
+
+.board {
+  flex: 5;
+  height: 100vh;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.board::-webkit-scrollbar {
+  display: none;
+}
+
+.picture {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  text-align: center;
+  width: 14%;
+  height: 9%;
+  cursor: pointer;
+  border: 0.05rem solid transparent;
+}
+
+.picture:hover {
+  opacity: 0.6;
+}
+
+.picture-focus {
+  border: 0.05rem solid gray;
+  border-radius: 2rem;
+  box-shadow: 5px 5px #888888;
+}
+
+.image {
+  width: 4rem;
+}
+
+.aside {
+  flex: 1;
+  height: 98vh;
+  max-height: 98vh;
+  position: relative;
+  padding: 0.5rem;
+  background-color: darkslategrey;
+}
+
+h2 {
+  font-family: gameOfThrones;
+  width: 21rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: silver;
+}
+
+.notFound {
+  display: none;
+  text-align: center;
+  color: silver;
+  font-size: 1.4rem;
+}
+
+.divPicture {
+  text-align: center;
+}
+
+
+.charPicture {
+  width: 20rem;
+  height: 12rem;
+  object-fit: cover
+}
+
+.info {
+  display: flex;
+  flex: wrap;
+  margin: 1.2rem 0;
+}
+
+.name2 {
+  flex: 1;
+  color: silver;
+  font-size: 1.4rem;
+  width: 10rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.bio {
+  display: block;
+  color: silver;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.org {
+  display: block;
+  color: silver;
+  margin: 1.2rem 0;
+  font-size: 1.1rem;
+}
+
+.search {
+  position: fixed;
+  top: 95%;
+  display: flex;
+  flex: row;
+}
+
+.far {
+  font-size: 2rem;
+  margin: 0 1.5rem 0 0.2rem;
+  color: silver;
+  cursor: pointer;
+}
+
+.far:hover {
+  color: black;
+}
+
+.input {
+  padding: 0.5rem;
+  width: 15rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .picture {
+    width: 12rem;
+    height: 5rem;
+  }
+}
+
+
+@media only screen and (max-width: 1015px) {
+
+  h2 {
+    width: 18rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .charPicture {
+    width: 18rem;
+    height: 7.2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 11rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    display: block;
+  }
+
+  .board {
+    height: 50vh;
+  }
+
+  .picture {
+    margin: 0.5rem;
+    padding: 0.3rem;
+    width: 8rem;
+    height: 5rem;
+  }
+
+  .picture-focus {
+    border: 0.05rem solid gray;
+    border-radius: 1rem;
+    box-shadow: 5px 5px #888888;
+  }
+
+  .aside {
+    height: 50vh;
+    max-height: 100vh;
+    position: sticky;
+  }
+
+  .search {
+    position: sticky;
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.3rem;
+  }
+
+  .charPicture {
+    width: 10rem;
+    height: 8rem;
+  }
+
+  .info {
+    margin: 0.2rem 0;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .board {
+    height: 38vh;
+  }
+
+  .aside {
+    height: 62vh;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 0.1rem;
+  }
+
+  .name2 {
+    font-size: 1.2rem;
+  }
+
+  .input {
+    width: 11rem;
+  }
+}
