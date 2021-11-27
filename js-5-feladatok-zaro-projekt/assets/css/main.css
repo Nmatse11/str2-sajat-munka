@@ -1,0 +1,246 @@
+body {
+  background-color: aqua;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: column;
+}
+
+form {
+  margin-left: 5vw;
+}
+
+.from-input {
+  margin-right: 0.5vw;
+}
+
+input[type="button"] {
+  background-color: teal;
+  color: white;
+}
+
+#submit {
+  margin-top: 1vw;
+}
+
+#submit:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+input:invalid:focus {
+  border: 0.12vw solid red;
+}
+
+input:valid {
+  border: 0.15vw solid black;
+}
+
+.modal__page {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.1vw solid black;
+  background-color: white;
+  overflow: auto;
+  text-align: center;
+  padding: 2vw;
+}
+
+span {
+  font-size: 1.5vw;
+}
+
+.faultMessage {
+  color: red;
+}
+
+.successfulMessage {
+  color: green;
+}
+
+.animation-open {
+  -webkit-animation: move-in 1.3s ease-in-out;
+  animation: move-in 1.3s ease-in-out;
+}
+
+.animation-close {
+  -webkit-animation: move-out 1.3s ease-in-out;
+  animation: move-out 1.3s ease-in-out;
+
+}
+
+@-webkit-keyframes move-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes move-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+h1 {
+  margin-top: 4vw;
+  text-align: center;
+}
+
+h4 {
+  color: red;
+}
+
+#userTable {
+  text-align: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.row:hover {
+  background-color: lightsteelblue;
+}
+
+input {
+  padding: 0.5vw;
+}
+
+.item {
+  padding: 0.5vw;
+}
+
+.editTr {
+  background-color: royalblue;
+}
+
+.editTr:hover {
+  background-color: royalblue;
+}
+
+input:focus {
+  outline: none;
+}
+
+input.middle:focus {
+  outline-width: 0;
+}
+
+.buttons {
+  background-color: aqua;
+}
+
+.editButton {
+  margin: 0.5vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
+.editButton:hover {
+  background-color: teal;
+}
+
+.editButton-none {
+  display: none;
+}
+
+.editButton-op {
+  margin: 0.5vw;
+  font-size: 1.5vw;
+  opacity: 0.5;
+}
+
+.delButton {
+  font-size: 1.5vw;
+  cursor: pointer;
+  background-color: tomato;
+}
+
+.delButton:hover {
+  background-color: teal;
+}
+
+.delButton-none {
+  display: none;
+}
+
+.delButton-op {
+  font-size: 1.5vw;
+  opacity: 0.5;
+}
+
+.saveButton {
+  display: none;
+}
+
+.saveButton-visible:hover {
+  background-color: teal;
+}
+
+.saveButton-visible {
+  margin: 0.5vw;
+  font-size: 1.7vw;
+  cursor: pointer;
+  display: inline;
+  background-color: greenyellow;
+}
+
+.cancelButton {
+  display: none;
+}
+
+.cancelButton-visible:hover {
+  background-color: teal;
+}
+
+.cancelButton-visible {
+  font-size: 1.7vw;
+  cursor: pointer;
+  display: inline;
+  background-color: cornflowerblue;
+}

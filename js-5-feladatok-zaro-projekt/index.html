@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Users</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+
+<body>
+  <div class="modal__page">
+    <div class="modal">
+      <span class="faultMessage"></span>
+      <span class="successfulMessage"></span>
+      <span class="infoMessage"></span>
+    </div>
+  </div>
+
+  <div>
+    <form class="form">
+      <h2>Add a new user</h2>
+      <h4>All fields are required!</h4>
+      <table>
+        <tr>
+          <td>
+            <label>Name</label><br>
+            <input type="text" class="from-input" name="name" placeholder="Fullname"
+              pattern="^[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+(\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+)*$"
+              required>
+          </td>
+          <td>
+            <label>Email Address</label><br>
+            <input type="text" class="from-input" name="email" placeholder="example@example.com"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}(\.[a-z]{2,3})*$" required>
+          </td>
+          <td>
+            <label>Address</label><br>
+            <input type="text" class="from-input" name="address" placeholder="1 Example Road"
+              pattern="^\d+\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+(\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+)*$"
+              required>
+          </td>
+          <td>
+            <input id="submit" type="button" value="Submit">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <h1>Userlist</h1>
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email Adress</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="tbody"></tbody>
+    </table>
+  </div>
+
+
+
+
+  <script type="module">
+    import { getUsers } from './assets/js/users.js'
+  </script>
+</body>
+
+</html>
