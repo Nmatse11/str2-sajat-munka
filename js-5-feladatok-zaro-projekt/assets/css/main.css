@@ -3,7 +3,6 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
-  flex: column;
 }
 
 form {
@@ -243,4 +242,44 @@ input.middle:focus {
   cursor: pointer;
   display: inline;
   background-color: cornflowerblue;
+}
+
+@media only screen and (max-width: 760px) {
+
+  body {
+    overflow-y: scroll;
+  }
+
+  h1 {
+    margin-left: 50%;
+  }
+
+  table {
+    margin-left: 20%;
+  }
+
+  .form h2,
+  h4 {
+    margin-left: 20%;
+  }
+
+
+  .modal {
+    padding-top: 50%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal span {
+    font-size: 5vw;
+  }
+
+  .editButton,
+  .delButton,
+  .saveButton-visible,
+  .cancelButton-visible,
+  .editButton-op,
+  .delButton-op {
+    font-size: 3vw;
+  }
 }
