@@ -9,8 +9,11 @@ const nameRegexString = "^[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\\s[
 const emailRegexString = "^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}(\\.[a-z]{2,3})*$";
 const addressRegexString = "^\\d+\\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+(\\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+)*$"; 
 const regex = [nameRegexString, emailRegexString, addressRegexString]
-
-const getUsers = async (url = ' ') => {
+let engMessages = []
+let hunMessages = []
+localStorage.setItem('id', 0)
+  
+const getFunction = async (url = ' ') => {
   let fetchOptions = {
     method: 'GET',
     mode: 'cors',
@@ -27,7 +30,7 @@ const getUsers = async (url = ' ') => {
 
   const createList = async () => {
     deleteTable();
-    let list = await getUsers('http://localhost:3000/users/');
+    let list = await getFunction('http://localhost:3000/users/');
     userList = []
     for (let i = 0; i< list.length; i++) {
       userList.push(list[i])
@@ -41,7 +44,19 @@ const getUsers = async (url = ' ') => {
   window.onload = () => {
     createList();
     submitClick();
+    createMessageList();
   }
+
+  const createMessageList = async () => {
+    let engMess = await getFunction('./assets/json/engMessages.json');
+    for (let i = 0; i< engMess.length; i++) {
+      engMessages.push(engMess[i])
+    }
+    let hunMess = await getFunction('./assets/json/hunMessages.json');
+    for (let i = 0; i< hunMess.length; i++) {
+      hunMessages.push(hunMess[i])
+    }
+  };
 
   const createTable = () => {
     const table = document.querySelector('#userTable');
@@ -121,7 +136,10 @@ const deleteClick = () => {
     modalOut();
     delSuccessMessage();
     let message = document.querySelector(".faultMessage");
-    message.textContent="Please finish editing the current user!";
+    if (localStorage.getItem('id') == 0) {
+      message.textContent = `${engMessages[1].text}`;}
+    if (localStorage.getItem('id') == 1) {
+      message.textContent = `${hunMessages[1].text}`;}
     modalHidden();
     }
     })
@@ -147,7 +165,10 @@ const editClick = () => {
       modalOut();
       delSuccessMessage();
       let message = document.querySelector(".faultMessage");
-      message.textContent="Please finish editing the current user!";
+      if (localStorage.getItem('id') == 0) {
+        message.textContent = `${engMessages[0].text}`;}
+      if (localStorage.getItem('id') == 1) {
+        message.textContent = `${hunMessages[0].text}`;}
       modalHidden();
     }
     })
@@ -349,7 +370,10 @@ const saveMessage = () => {
   modalOut();
   delFaultMessage();
   let message = document.querySelector(".successfulMessage");
-  message.textContent="Modification successful!";
+  if (localStorage.getItem('id') == 0) {
+    message.textContent = `${engMessages[1].text}`;}
+  if (localStorage.getItem('id') == 1) {
+    message.textContent = `${hunMessages[1].text}`;}
   modalHidden();
 }
 
@@ -357,7 +381,10 @@ const defaultMessage = () => {
   modalOut();
   delSuccessMessage();
   let message = document.querySelector(".faultMessage");
-  message.textContent="Data is not valid!";
+  if (localStorage.getItem('id') == 0) {
+    message.textContent = `${engMessages[2].text}`;}
+  if (localStorage.getItem('id') == 1) {
+    message.textContent = `${hunMessages[2].text}`;}
   modalHidden();
 }
 
@@ -365,8 +392,11 @@ const createMessage = () => {
   modalOut();
   delFaultMessage();
   let message = document.querySelector(".successfulMessage");
-  message.textContent="New user addition successful!";
+  if (localStorage.getItem('id') == 0) {
+    message.textContent = `${engMessages[3].text}`;}
+  if (localStorage.getItem('id') == 1) {
+    message.textContent = `${hunMessages[3].text}`;}
   modalHidden();
 }
     
-export {getUsers}
+export {getFunction}

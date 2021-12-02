@@ -19,25 +19,27 @@
   </div>
 
   <div>
+    <button class="lang hun">Hun</button>
+    <button class="lang eng">Eng</button>
     <form class="form">
-      <h2>Add a new user</h2>
-      <h4>All fields are required!</h4>
+      <h2 class="text">Add a new user</h2>
+      <h4 class="text">All fields are required!</h4>
       <table>
         <tr>
           <td>
-            <label>Name</label><br>
-            <input type="text" class="from-input" name="name" placeholder="Fullname"
+            <label class="text">Name</label><br>
+            <input type="text" class="from-input textPlaceholder" name="name" placeholder="Fullname"
               pattern="^[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+(\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+)*$"
               required>
           </td>
           <td>
-            <label>Email Address</label><br>
-            <input type="text" class="from-input" name="email" placeholder="example@example.com"
+            <label class="text">Email Address</label><br>
+            <input type="text" class="from-input textPlaceholder" name="email" placeholder="example@example.com"
               pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}(\.[a-z]{2,3})*$" required>
           </td>
           <td>
-            <label>Address</label><br>
-            <input type="text" class="from-input" name="address" placeholder="1 Example Road"
+            <label class="text">Address</label><br>
+            <input type="text" class="from-input textPlaceholder" name="address" placeholder="1 Example Road"
               pattern="^\d+\s[A-ZÁÉÍÓÚÖŐÜŰ]{1}[a-záéíóúöőüű]+\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+(\s[A-ZÁÉÍÓÚÖŐÜŰ0-9]{1}[a-záéíóúöőüű]+)*$"
               required>
           </td>
@@ -47,15 +49,15 @@
         </tr>
       </table>
     </form>
-    <h1>Userlist</h1>
+    <h1 class="text">Userlist</h1>
     <table id="userTable">
       <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
-          <th>Email Adress</th>
-          <th>Address</th>
-          <th>Actions</th>
+          <th class="text">Name</th>
+          <th class="text">Email Address</th>
+          <th class="text">Address</th>
+          <th class="text">Actions</th>
         </tr>
       </thead>
       <tbody class="tbody"></tbody>
@@ -66,8 +68,9 @@
 
 
   <script type="module">
-    import { getUsers } from './assets/js/users.js'
+    import { getFunction } from './assets/js/users.js'
   </script>
+  <script type="module" src="./assets/js/lang.js"></script>
 </body>
 
 </html>
