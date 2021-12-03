@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anyacipő - Adventi Kalendárium</title>
+  <link rel="stylesheet" href="./css/calendar.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+
+<body>
+  <div class="modal__page">
+    <div class="modal">
+      <span class="close-btn">&times;</span>
+      <div class="day"></div>
+      <div class="text"></div>
+      <div class="bookInfo">
+        <div class="bookPicture"></div>
+        <div class="book">
+          <span class="author"></span><br>
+          <span class="title"></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a target="_blank"><button class="link-btn">Érdekel a könyv. Olvasom tovább!</button></a>
+        <button class="close-btn cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="top">
+    <img src="./assets/site/anyacipo.png" alt="anyacipo" class="logo">
+    <img src="./assets/site/december.png" alt="2021 december" class="december">
+  </div>
+
+  <div class="board"></div>
+
+  <script type="module">
+    import { getList } from './js/calendar.js'
+  </script>
+</body>
+
+</html>
