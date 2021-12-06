@@ -1,0 +1,195 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.slider {
+  width: 100vw;
+  position: relative;
+}
+
+.image {
+  width: 100vw;
+  object-fit: cover;
+  object-position: 50% 75%;
+  -webkit-animation: move-in 1.7s ease-in-out;
+  animation: move-in 1.7s ease-in-out;
+}
+
+.listNumber {
+  position: absolute;
+  top: 0;
+  color: white;
+  padding: 2vw;
+  font-size: 1.2vw;
+}
+
+.caption {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 1.2vw;
+  color: white;
+  font-weight: bold;
+}
+
+.leftBtn,
+.rightBtn {
+  position: absolute;
+  top: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 5vw;
+  transition: all 0.3s ease-in-out;
+}
+
+.leftBtnt:hover,
+.rightBtn:hover {
+  color: gray;
+}
+
+.rightBtn {
+  right: 0;
+  margin-right: 2.2vw;
+}
+
+.leftBtn {
+  margin-left: 2.2vw;
+}
+
+.sliderManager {
+  text-align: center;
+}
+
+.circle {
+  position: absolute;
+  color: gray;
+  cursor: pointer;
+  font-size: 2vw;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  color: black;
+}
+
+.dot {
+  display: inline-block;
+  margin-right: 3vw;
+}
+
+.circle:hover {
+  color: black;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+  left: -100px;
+}
+
+@-webkit-keyframes move-in {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-in {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .listNumber {
+    font-size: 2vw;
+  }
+
+  .caption {
+    font-size: 3vw;
+    bottom: 2vw;
+  }
+
+  .circle {
+    font-size: 3vw;
+  }
+
+  .dot {
+    margin-right: 4vw;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  .listNumber {
+    font-size: 3vw;
+  }
+
+  .caption {
+    font-size: 4vw;
+  }
+
+  .circle {
+    font-size: 4vw;
+  }
+
+  .dot {
+    margin-right: 5vw;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  .listNumber {
+    font-size: 3vw;
+  }
+
+  .caption {
+    font-size: 4vw;
+  }
+
+  .circle {
+    font-size: 4vw;
+  }
+
+  .dot {
+    margin-right: 5vw;
+  }
+
+}
+
+@media only screen and (max-width: 330px) {
+
+  .listNumber {
+    font-size: 5vw;
+  }
+
+  .caption {
+    font-size: 6vw;
+  }
+
+  .circle {
+    font-size: 6vw;
+  }
+
+  .dot {
+    margin-right: 10vw;
+  }
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do</title>
+  <link rel="stylesheet" href="./main/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+
+<body>
+  <div class="manager">
+    <h2 class="address">Daily To-Do list manager</h2>
+    <div class="todo">
+      <div class="time"><span class="day"></span><br><span class="now"></span></div>
+      <div class="new">
+        <input class="add" type="text" placeholder="Take the garbage out">
+        <input type="submit" value="+" class="add__button">
+      </div>
+      <div class="chill">
+        <p>Time to chill!<br>You have no todos.</p>
+      </div>
+      <div class="text">
+        <label class="todo-text">You have <span class="piece"></span> pending items</label>
+        <div class="todo-list">
+          <ul class="todo-list-item"></ul>
+        </div>
+        <div class="text ready-none">
+          <label class="ready-text">Completes tasks: <span class="percent"><span></label>
+          <div class="ready-list">
+            <ul class="ready-list-item"></ul>
+          </div>
+        </div>
+        <div class="button">
+          <button class="show">Show Complete</button>
+          <button class="clear">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main/todo.js"></script>
+</body>
+
+</html>
