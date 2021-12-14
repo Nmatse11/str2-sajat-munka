@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url("https://use.typekit.net/rtt4wer.css");
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.body {
+  margin: 0;
+}
+
+.nav {
+  background-image: url('../img/bg-pattern.png'), linear-gradient(to right, #da2431, #7d4397);
+  background-repeat: repeat;
+}
+
+.nav-active {
+  background-color: #ffffff;
+}
+
+.smooth-active {
+  color: #222222;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 2px
+}
+
+.smooth-active:hover {
+  color: #ffd359
+}
+
+.link {
+  font-family: "Catamaran:wght@100", Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+  color: #ffd359;
+  letter-spacing: 2px
+}
+
+.link-active {
+  font-family: "Catamaran:wght@100", Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+  color: #222222;
+  letter-spacing: 2px
+}
+
+.link-active:hover {
+  color: #ffd359;
+}
+
+.smooth {
+  color: #dfc0cf;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 2px
+}
+
+.button {
+  font-family: "Lato:wght@300", Helvetica, Arial, sans-serif;
+}
+
+.link:hover {
+  color: #ffffff
+}
+
+.smooth:hover {
+  letter-spacing: 2px;
+  color: #ffffff
+}
+
+header {
+  background-image: url('../img/bg-pattern.png'), linear-gradient(to right, #da2431, #7d4397);
+  background-repeat: repeat;
+  color: #ffffff
+}
+
+.newAge {
+  font-family: Muli, Helvetica, Arial, sans-serif;
+  color: #ffffff
+}
+
+.border__button {
+  color: #ffffff;
+  padding: 1rem 3.5rem;
+  transition: all 0.3s ease-in-out;
+  border-color: #ffffff;
+  font-size: 0.8rem;
+  letter-spacing: 2px
+}
+
+
+.border__button:hover {
+  background-color: #fdcc52;
+  border-color: #fdcc52 !important;
+  color: #ffffff;
+}
+
+
+.phoneside {
+  position: relative;
+}
+
+.phone {
+  position: absolute;
+  height: 28rem;
+  top: 0;
+}
+
+.demo {
+  position: relative;
+  height: 22rem;
+  top: 0;
+}
+
+.discover,
+.friends {
+  background-color: #fec63d;
+}
+
+.buzz {
+  font-size: 3rem;
+}
+
+.appDownload {
+  width: 10rem;
+}
+
+.blockquote-footer::before {
+  display: none;
+}
+
+h1,
+h4 {
+  font-family: "Catamaran:wght@100", Helvetica, Arial, sans-serif;
+  color: #222423
+}
+
+.dark {
+  background-color: #000000
+}
+
+.stopSection {
+  background-image: url('../img/bg-cta.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.stop {
+  font-size: 4rem;
+}
+
+p {
+  font-family: Muli, Helvetica, Arial, sans-serif;
+}
+
+.footer {
+  background-color: #222222;
+  font-family: Muli, Helvetica, Arial, sans-serif;
+}
+
+.website,
+.links {
+  color: #606060
+}
+
+.links:hover {
+  color: #fdcc52
+}
+
+.facebook {
+  background-color: rgba(59, 89, 153, 0.9)
+}
+
+.facebook:hover {
+  background-color: rgb(59, 89, 153)
+}
+
+.twitter {
+  background-color: rgba(29, 161, 243, 0.9)
+}
+
+.twitter:hover {
+  background-color: rgb(29, 161, 243)
+}
+
+.google {
+  background-color: rgba(221, 76, 57, 0.9)
+}
+
+.google:hover {
+  background-color: rgb(221, 76, 57)
+}
+
+.iconify {
+  color: #a5356d;
+}
+
+.iconifyHr {
+  background-color: #a5356d;
+}
+
+.card-title {
+  color: #222629;
+}
+
+.card-text {
+  color: #6e757b
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  .newAge {
+    font-size: 3rem
+  }
+
+  .phone {
+    position: absolute;
+    height: 31rem;
+    top: 0;
+  }
+
+  .demo {
+    position: relative;
+    height: 24rem;
+    top: 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .nav {
+    background-color: #ffffff;
+  }
+
+  .nav-active {
+    background-color: #ffffff;
+  }
+
+  .link-active {
+    color: #ffd359;
+  }
+
+  .link-active:hover {
+    color: #222222;
+  }
+
+  .newAge {
+    font-size: 2rem
+  }
+
+  .started {
+    padding: 0.7rem 2rem;
+    font-size: 0.6rem;
+  }
+
+}
