@@ -1,0 +1,42 @@
+@use "variables/variables";
+
+
+.footer {
+  padding-top: 2rem;
+  background-color: variables.$footer-background-color;
+  font-family: variables.$muli;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 80%;
+    font-weight: 400;
+  }
+
+  &__row {
+    flex-direction: column;
+  }
+
+  &__website {
+    color: variables.$footer-links-color;
+  }
+
+  &__left {
+    margin-right: 0.8rem;
+  }
+
+  &__links {
+    margin: 0.5rem 0 1rem;
+
+    &-item {
+      color: variables.$footer-links-color;
+
+      &:hover {
+        color: variables.$border-button-background-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

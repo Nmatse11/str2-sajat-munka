@@ -1,0 +1,38 @@
+.phoneside {
+  position: relative;
+
+  &__col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+
+    @media only screen and (max-width: 992px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__phone {
+    position: absolute;
+    height: 28rem;
+    top: 0;
+
+    @media only screen and (max-width: 992px) {
+      position: absolute;
+      height: 31rem;
+      top: 0;
+    }
+  }
+
+  &__demo {
+    position: relative;
+    height: 22rem;
+    top: 0;
+
+    @media only screen and (max-width: 992px) {
+      position: relative;
+      height: 24rem;
+      top: 0.4rem;
+    }
+  }
+}

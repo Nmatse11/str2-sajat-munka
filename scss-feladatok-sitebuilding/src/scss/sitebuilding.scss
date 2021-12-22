@@ -1,0 +1,9 @@
+@use "moduls/variables/variables";
+@use "moduls/moduls";
+@use "mixins/mixins";
+
+.friends {
+  @include mixins.social-btn(twitter, variables.$twitter-background-color, variables.$text-color);
+  @include mixins.social-btn(facebook, variables.$facebook-background-color, variables.$text-color);
+  @include mixins.social-btn(google, variables.$google-background-color, variables.$text-color);
+}

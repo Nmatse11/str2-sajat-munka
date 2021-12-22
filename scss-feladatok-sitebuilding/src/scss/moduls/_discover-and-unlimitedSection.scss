@@ -1,0 +1,77 @@
+@use "variables/variables";
+
+.discover,
+.unlimited {
+  color: variables.$discover-color;
+  text-align: center;
+  padding: 3rem 0;
+
+  &__container {
+    padding: 3rem 0;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__col {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 0 8rem 1.5rem;
+
+    @media only screen and (max-width: 992px) {
+      margin: 0 2rem 1.5rem;
+    }
+  }
+
+  &__text {
+    font-family: variables.$muli;
+    font-size: 1rem;
+    font-weight: 400;
+
+    @media only screen and (max-width: 992px) {
+      margin: 0 2rem;
+    }
+  }
+
+  &__appDownload {
+    width: 10rem;
+    margin: 0 0.2rem;
+
+    @media only screen and (max-width: 992px) {
+      width: 12rem;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+.discover {
+  background-color: variables.$section-background-color;
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.unlimited {
+  background-color: variables.$text-color;
+
+  &__text {
+    color: variables.$unlimited-color
+  }
+}

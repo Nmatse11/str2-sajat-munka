@@ -1,0 +1,66 @@
+@use "variables/variables";
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+
+  &__iconify {
+    color: variables.$iconify-color;
+  }
+
+  &__iconifyHr {
+    background-color: variables.$iconify-color;
+    margin: 0;
+
+    @media only screen and (max-width: 992px) {
+      visibility: hidden;
+    }
+  }
+
+  &__rowup {
+    margin-bottom: 3rem;
+
+    @media only screen and (max-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    @media only screen and (max-width: 992px) {
+      margin: 3rem;
+    }
+
+    @media only screen and (max-width: 576px) {
+      margin: 3rem 0;
+    }
+
+    &-title {
+      font-family: variables.$catamaran;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &-body {
+      font-family: variables.$muli;
+      padding-top: 0.25rem;
+      margin: 0 1rem;
+    }
+
+    &-text {
+      color: variables.$card-text-color;
+
+      @media only screen and (max-width: 992px) {
+        margin: 0 8rem;
+      }
+
+      @media only screen and (max-width: 768px) {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+}

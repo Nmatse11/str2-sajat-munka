@@ -1,0 +1,15 @@
+@use 'sass:color';
+
+@mixin social-btn($modifier, $background, $color) {
+  &__#{$modifier} {
+    background-color: $background;
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+      background-color: color.scale($background, $lightness: -10%);
+      color: $color;
+      text-decoration: none;
+    }
+  }
+}

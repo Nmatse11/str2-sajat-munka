@@ -1,0 +1,43 @@
+@use "variables/variables";
+
+.stopSection {
+  background-image: url('../img/bg-cta.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &__layer {
+    background-color: variables.$layer-background-color;
+    position: relative;
+    padding: 3rem 0;
+  }
+
+  &__container {
+    padding: 10rem 6.2rem;
+  }
+
+  &__stop {
+    font-family: variables.$muli;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    color: variables.$text-color;
+
+    @media only screen and (max-width: 992px) {
+      font-size: 3rem
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-size: 2.5rem
+    }
+  }
+
+  &__button {
+    @media only screen and (max-width: 768px) {
+      padding: 0.7rem 2rem;
+      font-size: 0.6rem;
+    }
+  }
+}
