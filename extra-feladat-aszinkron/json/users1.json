@@ -1,0 +1,16 @@
+{
+  "users":[
+           {
+            "name": "John Doe", 
+            "age": 30
+           },
+           {
+            "name": "Raychel Murray",
+            "age": 45
+           },
+           {
+            "name": "Marvin Worham",
+            "age": 25
+          }
+    ]
+}
