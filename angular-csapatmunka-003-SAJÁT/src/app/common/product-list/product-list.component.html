@@ -1,0 +1,28 @@
+<h5>Szűrés:</h5>
+<div class="row pb-5">
+  <div class="col-4">
+    <select [(ngModel)]="filterKey" class="form-control">
+      <option value="">Összes termék</option>
+      <option *ngFor='let key of keys' [value]="key">{{ key | titlecase }}</option>
+    </select>
+  </div>
+  <div class="col-8">
+    <input [(ngModel)]="phrase" type="text" class="form-control">
+  </div>
+</div>
+
+<h5>Rendezés:</h5>
+<div class="row pb-5">
+  <div class="col-12 d-flex flex-md-row flex-column">
+    <p class="sorterlink mr-4" (click)="onSorterSelect('price')">Ár szerint növekvő</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('name')">Név szerint</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('discount')">Akciósok előre</p>
+    <p class="sorterlink mr-4" (click)="onSorterSelect('featured')">Kiemeltek előre</p>
+  </div>
+</div>
+
+<div class="col-12 d-flex flex-row flex-wrap justify-content-center m-0 p-0">
+  <app-product-card [product]="product"
+    *ngFor="let product of categoryProducts | filter:phrase:filterKey | sorter:sorterKey " class="mb-2">
+  </app-product-card>
+</div>
