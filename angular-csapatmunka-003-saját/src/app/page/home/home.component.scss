@@ -1,0 +1,16 @@
+body, html, app-root {
+  background-color: honeydew;
+}
+
+
+.home {
+
+  &-title {
+    color: cadetblue;
+  }
+}
+
+.hr {
+  color: cadetblue;
+  border-top: 5px solid
+}

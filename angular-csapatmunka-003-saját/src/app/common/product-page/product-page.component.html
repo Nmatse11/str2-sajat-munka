@@ -1,0 +1,29 @@
+<div class="row">
+  <div *ngIf="product$ | async as product" class="col-6 offset-3">
+    <img [src]="product.image" [alt]="product.name" />
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-3 text-center">
+          <h3> {{ product.name }}</h3>
+        </div>
+        <div class="col-12">
+          <p class="card-text h5 mb-5 border border-danger p-2">{{ product.description }}</p>
+        </div>
+        <div class="col-12">
+          <p class="card-price h3"><strong>Ár:</strong> {{ product.price }} Ft</p>
+        </div>
+        <div class="col-12">
+          <p class="card-stock text-muted h5"><strong>Készlet:</strong> {{ product.stock }} darab</p>
+        </div>
+        <div class="col-12">
+          <p class="text-muted h5 mb-2" *ngIf="product.featured == true"> Kiemelt</p>
+        </div>
+        <div class="col-12 mb-3">
+          <p class="text-muted h5" *ngIf="product.active == true"> Nem elérhető</p>
+          <p class="text-muted h5" *ngIf="product.active == false"> Elérhető</p>
+        </div>
+        <button [routerLink]="['/', product.catID.toLowerCase() ]" class="btn btn-info btn-block" mx-5>Vissza</button>
+      </div>
+    </div>
+  </div>
+</div>
