@@ -20,38 +20,17 @@ export class ProductService {
     return this.http.get<Product>(`${this.jsonUrl}/${id}`);
   }
 
+  update(product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${this.jsonUrl}/${product.id}`, product)
+  }
 
-  /*
-  Nem json fájl, hanem lista esetén így is lehetett volna.
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${this.jsonUrl}`, product);
+  }
 
-  getAll(): Product[] {
-    return this.productList;
+  remove(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.jsonUrl}/${id}`)
   }
-  getOne(id: string | number): Product {
-    return this.productList.filter(product => product.id === Number(id))[0];
-  }
-  getAllFeaturedByCatId(catId: string | number): Product[] {
-    return this.productList.filter(product => product.catId === Number(catId) && product.featured);
-  }
-  getFeaturedAll(): Product[] {
-    return this.productList.filter(product => product.featured)
-  }
-  getAllbyCatId(catId: string | number): Product[] {
-    return this.productList.filter(product => product.catId === Number(catId));
-  }
-  getCategory(catId: string | number): Category{
-    return this.categoryList.filter(category => category.id === Number(catId))[0];
-  }
-  getRandom(list: Product[], num: number = 5): Product[] {
-    num = num > list.length ? list.length : num;
-    const copyList = [...list];
-    const result: Product[] = [];
-    for (let i = 0; i < num; i++) {
-      const index = Math.floor(Math.random() * copyList.length);
-      result.push(copyList[index]);
-      copyList.splice(index, 1);
-    }
-    return result;
-  }*/
+
 
 }

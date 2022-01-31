@@ -4,15 +4,15 @@ export class Product {
   catID: string = '';
   name: string = '';
   description: string = '';
-  image: string = '';
+  image: string = './assets/img/10000.jpg';
   price: number = 0;
   stock: number = 0;
   featured: boolean = false;
-  active: boolean = true;
-  discount: boolean = true;
+  active: boolean = false;
+  disabled: boolean = true
 
   /*constructor(id: number, catID: string, name: string, description: string,
-    image: string, price: number, stock: number, featured: boolean, active: boolean, discount: boolean) {
+    image: string, price: number, stock: number, featured: boolean, active: boolean) {
       this.id = id;
       this.catID = catID;
       this.name = name;
@@ -22,6 +22,5 @@ export class Product {
       this.stock = stock;
       this. featured = featured;
       this.active = active;
-      this.discount = discount;
     }*/
 }

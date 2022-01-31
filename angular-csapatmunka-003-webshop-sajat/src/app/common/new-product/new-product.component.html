@@ -1,0 +1,73 @@
+<div class="row mb-5">
+  <h2>Új termék hozzáadása</h2>
+  <div class="col-12 mt-3">
+    <form (ngSubmit)="onUpdate(productFrom.value)" #productFrom="ngForm">
+      <input class="form-control" [(ngModel)]="product['id']" type="hidden" name="id">
+      <div class="row">
+        <div class="form-group col-md-4 pl-md-0">
+          <label for="productCategory">Kategória</label>
+          <select class="form-control" [(ngModel)]="product['catID']" type="text" name="catID" id="productCategory"
+            required>
+            <option value="">Válassz...</option>
+            <option value="Lego">Lego</option>
+            <option value="LegoDuplo">Lego Duplo</option>
+          </select>
+        </div>
+        <div class="form-group col-md-8 pl-md-0">
+          <label for="productName">Név</label>
+          <input class="form-control" [(ngModel)]="product['name']" type="text" name="name" id="productName"
+            placeholder="A termék neve" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 pl-md-0">
+          <label for="productDescription">Leírás</label>
+          <textarea class="form-control" [(ngModel)]="product['description']" type="text" name="description"
+            id="productDescription" rows="3" placeholder="Rövid leírás" required></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 pl-md-0">
+          <label for="productImage">Kép</label>
+          <input class="form-control" [(ngModel)]="product['image']" type="text" name="image" id="productImage"
+            placeholder="./assets/img/10000.jpg">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3 pl-md-0">
+          <label for="productPrice">Ár</label>
+          <div class="input-group mb-3">
+            <input class="form-control" [(ngModel)]="product['price']" type="number" name="price" id="productPrice"
+              required>
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic">Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-3 pl-md-0">
+          <label for="productStock">Készlet</label>
+          <div class="input-group mb-3">
+            <input class="form-control" [(ngModel)]="product['stock']" type="number" name="stock" id="productStock"
+              required>
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic">db</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-check m-2">
+          <label for="productFeatured" class="form-check-label">Kiemelt</label>
+          <input class="form-control" [(ngModel)]="product['featured']" type="checkbox" name="featured"
+            id="productFeatured">
+        </div>
+        <div class="form-check m-2">
+          <label for="productActive" class="form-check-label">Elérhető</label>
+          <input class="form-control" [(ngModel)]="product['active']" type="checkbox" name="active" id="productActive">
+        </div>
+      </div>
+      <input class="form-control" [(ngModel)]="product['disabled']" type="hidden" name="disabled">
+      <button [disabled]="productFrom.invalid" class="btn btn-primary mt-3 mt-md-0 mr-3"
+        type="submit">Létrehozás</button>
+      <button [routerLink]="['/admin']" class="btn btn-secondary mt-3 mt-md-0" type="submit">Mégsem</button>
+    </form>
+  </div>
+</div>

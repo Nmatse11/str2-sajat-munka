@@ -17,6 +17,7 @@ export class ConfigService {
     {text: 'Főoldal', link: '/', icon: 'home'},
     {text: 'LEGO DUPLO', link: '/legoduplo'},
     {text: 'LEGO', link: '/lego'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   constructor() { }

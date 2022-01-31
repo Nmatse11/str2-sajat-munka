@@ -1,0 +1,33 @@
+.table th {
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(201, 194, 194);
+  }
+}
+
+.table td {
+  padding: 0.3rem !important;
+}
+
+.idCol {
+  width: 3.5rem;
+}
+
+.switchCol {
+  width: 1rem;
+}
+
+.stockCol {
+  width: 2rem;
+}
+
+.categoryCol {
+  width: 8rem;
+}
+
+.priceCol {
+  width: 8rem;
+}
+
+

@@ -1,0 +1,84 @@
+<h5>Szűrés:</h5>
+<div class="row pb-5">
+  <div class="col-4">
+    <select [(ngModel)]="filterKey" class="form-control">
+      <option value="">Összes termék</option>
+      <option *ngFor='let key of keys' [value]="key">{{ key | titlecase }}</option>
+    </select>
+  </div>
+  <div class="col-8">
+    <input [(ngModel)]="phrase" type="text" class="form-control">
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="col-12">
+    <table class="table table-striped mt-3 mb-5">
+      <thead>
+        <tr class="text-center">
+          <th (click)="onColumnSelect('id')">#</th>
+          <th (click)="onColumnSelect('catID')">Kategória</th>
+          <th (click)="onColumnSelect('name')">Név</th>
+          <th (click)="onColumnSelect('description')">Leírás</th>
+          <th (click)="onColumnSelect('price')">Ár</th>
+          <th (click)="onColumnSelect('stock')">Készlet</th>
+          <th (click)="onColumnSelect('featured')">Kiemelt</th>
+          <th (click)="onColumnSelect('active')">Elérhető</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of list$ | async | filter:phrase:filterKey | sorter:sorterKey:direction">
+          <td class="idCol">
+            <input type="text" [(ngModel)]="product['id']" class="form-control text-center" name="productId"
+              [value]="product['id']" readonly="true">
+          </td>
+          <td class="categoryCol">
+            <input type="text" [(ngModel)]="product['catID']" class="form-control" name="productcatID"
+              [value]="product['catID']" [disabled]="product.disabled">
+          </td>
+          <td class="col-2">
+            <input type="text" [(ngModel)]="product['name']" class="form-control" name="productName"
+              [value]="product['name']" [disabled]="product.disabled">
+          </td>
+          <td class="col-3">
+            <input type="text" [(ngModel)]="product['description']" class="form-control inputDescription"
+              name="productDesc" [value]="product['description']" [disabled]="product.disabled">
+          </td>
+          <td class="priceCol">
+            <input type="number" [(ngModel)]="product['price']" class="form-control text-right" name="productPrice"
+              [value]="product['price']" [disabled]="product.disabled">
+          </td>
+          <td class="stockCol">
+            <input type="number" [(ngModel)]="product['stock']" class="form-control text-right" name="productStock"
+              [value]="product['stock']" [disabled]="product.disabled">
+          </td>
+          <td class="switchCol">
+            <div class="custom-control custom-switch d-flex flex-row justify-content-center align-items-center">
+              <input type="checkbox" class="custom-control-input" id={{product.id}} [(ngModel)]="product['featured']"
+                [disabled]="product.disabled">
+              <label class="custom-control-label" for={{product.id}}></label>
+            </div>
+          </td>
+          <td class="switchCol">
+            <div class="custom-control custom-switch d-flex flex-row justify-content-center align-items-center">
+              <input type="checkbox" class="custom-control-input" id={{product.name}} [(ngModel)]="product['active']"
+                [disabled]="product.disabled">
+              <label class="custom-control-label" for={{product.name}}></label>
+            </div>
+          </td>
+          <td class="d-flex flex-row">
+            <button *ngIf="update == true" (click)="onUpdateProduct(product)" class="btn btn-success" type="button"><i
+                class="fa fa-pencil"></i></button>
+            <button *ngIf="update == true" [routerLink]="['/viewProduct/', product.id ]" class="btn btn-info"
+              type="button"><i class="fa fa-eye"></i></button>
+            <button *ngIf="update == false" (click)="onSaveProduct(product)" class="btn btn-info" type="button"><i
+                class="fa fa-save"></i></button>
+            <button *ngIf="update == false" (click)="onDeleteProduct(product)" class="btn btn-danger" type="button"><i
+                class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

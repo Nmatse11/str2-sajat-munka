@@ -16,6 +16,12 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
 import { ProductComponent } from './page/product/product.component';
 import { ProductPageComponent } from './common/product-page/product-page.component';
+import { AdminComponent } from './page/admin/admin.component';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { NewProductComponent } from './common/new-product/new-product.component';
+import { AddNewProductComponent } from './page/add-new-product/add-new-product.component';
+import { ViewProductComponent } from './common/view-product/view-product.component';
+import { EditProductComponent } from './page/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { ProductPageComponent } from './common/product-page/product-page.compone
     FilterPipe,
     SorterPipe,
     ProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    AdminComponent,
+    DataEditorComponent,
+    NewProductComponent,
+    AddNewProductComponent,
+    ViewProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

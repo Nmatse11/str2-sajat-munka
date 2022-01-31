@@ -14,7 +14,7 @@ export class Cat02Component implements OnInit {
   featuredCat2List: Product[] = []
   cat2List: Product[] = []
 
-  category: Category = this.categoryService.list[1]
+  category: Category = this.categoryService.getOne(2)
 
   constructor(
     private productService: ProductService,
