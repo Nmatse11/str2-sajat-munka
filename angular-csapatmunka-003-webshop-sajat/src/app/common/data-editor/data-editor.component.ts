@@ -23,7 +23,6 @@ export class DataEditorComponent implements OnInit {
   sorterKey: string = '';
 
   direction: number = -1;
-  //direction: boolean = false;
 
   directionId: number = 1;
   directioncatID: number = 1;
