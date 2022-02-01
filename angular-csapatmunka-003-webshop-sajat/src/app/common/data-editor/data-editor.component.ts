@@ -73,10 +73,6 @@ export class DataEditorComponent implements OnInit {
     )
   }
 
-  onItemPerPage(number: number) {
-    this.itemsPerPage = number
-  }
-
   onColumnSelect(key: string): void {
     this.sorterKey = key;
     if (this.sorterKey == 'id') {
