@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { AngularPaginatorModule } from 'angular-paginator';
 
 @Component({
   selector: 'app-data-editor',
@@ -13,7 +14,7 @@ export class DataEditorComponent implements OnInit {
 
   keys: string[] = Object.keys(new Product);
 
-  list$: Observable<Product[]> = this.productService.getAll()
+  productList$: Observable<Product[]> = this.productService.getAll()
 
   phrase: string = '';
 
@@ -22,6 +23,7 @@ export class DataEditorComponent implements OnInit {
   sorterKey: string = '';
 
   direction: number = -1;
+  //direction: boolean = false;
 
   directionId: number = 1;
   directioncatID: number = 1;
@@ -36,14 +38,16 @@ export class DataEditorComponent implements OnInit {
 
   update:boolean = true
 
+  currentPage = 1;
+  itemsPerPage: number = 10;
+
   constructor(
     private productService: ProductService,
     private router: Router
   ) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onUpdateProduct(product: Product): void {
     product.disabled = false,
@@ -69,6 +73,9 @@ export class DataEditorComponent implements OnInit {
     )
   }
 
+  onItemPerPage(number: number) {
+    this.itemsPerPage = number
+  }
 
   onColumnSelect(key: string): void {
     this.sorterKey = key;

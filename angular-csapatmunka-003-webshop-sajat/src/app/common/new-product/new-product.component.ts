@@ -14,10 +14,6 @@ export class NewProductComponent implements OnInit {
 
   product: Product = new Product()
 
-  products$: Observable<Product> = this.activatedRoute.params.pipe(
-    switchMap( params => this.productService.getOne(params['id']))
-  );
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
@@ -27,7 +23,7 @@ export class NewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onUpdate(product: Product) :void {
+  onSave(product: Product) :void {
     this.productService.create(product).subscribe(
       product => this.router.navigate(['/', 'admin']),
       err => console.error(err)

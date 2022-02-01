@@ -14,7 +14,7 @@ export class Cat01Component implements OnInit {
   featuredCat1List: Product[] = []
   cat1List: Product[] = []
 
-  category: Category = this.categoryService.getOne(1)
+  category: Category = new Category()
 
   constructor(
     private productService: ProductService,
@@ -29,6 +29,11 @@ export class Cat01Component implements OnInit {
     this.productService.getAll().subscribe(
       product => this.cat1List = Object.values(product).filter(item => item.catID == "LegoDuplo"),
     )
+
+    this.categoryService.getOne(1).subscribe(
+      category => this.category = category
+    )
+
   }
 
 }

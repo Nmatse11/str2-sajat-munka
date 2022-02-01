@@ -1,14 +1,13 @@
 <div class="row mb-5">
   <h2>Új termék hozzáadása</h2>
   <div class="col-12 mt-3">
-    <form (ngSubmit)="onUpdate(productFrom.value)" #productFrom="ngForm">
+    <form (ngSubmit)="onSave(productFrom.value)" #productFrom="ngForm">
       <input class="form-control" [(ngModel)]="product['id']" type="hidden" name="id">
       <div class="row">
         <div class="form-group col-md-4 pl-md-0">
           <label for="productCategory">Kategória</label>
           <select class="form-control" [(ngModel)]="product['catID']" type="text" name="catID" id="productCategory"
             required>
-            <option value="">Válassz...</option>
             <option value="Lego">Lego</option>
             <option value="LegoDuplo">Lego Duplo</option>
           </select>

@@ -1,0 +1,21 @@
+<div class="row mb-5">
+  <div class="col-12">
+    <form #newCategoryFrom="ngForm">
+      <h2>Új kategória létrehozása</h2>
+      <input class="form-control" [(ngModel)]="newCat['id']" type="hidden" name="id">
+      <div class="form-group mt-2">
+        <label for="categoryName">Név</label>
+        <input class="form-control" [(ngModel)]="newCat['name']" type="text" name="name" id="categoryName"
+          placeholder="A kategória neve" required>
+      </div>
+      <div class="form-group">
+        <label for="categoryDescription">Leírás</label>
+        <textarea class="form-control" [(ngModel)]="newCat['description']" type="text" name="description"
+          id="categoryDescription" rows="3" placeholder="Rövid leírás" required></textarea>
+      </div>
+      <button (click)="onSave(newCategoryFrom.value)" [disabled]="newCategoryFrom.invalid"
+        class="btn btn-primary mt-3 mt-md-0 mr-3" type="submit">Létrehozás</button>
+      <button (click)="onCancel()" class="btn btn-secondary mt-3 mt-md-0" type="submit">Mégsem</button>
+    </form>
+  </div>
+</div>

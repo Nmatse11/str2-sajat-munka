@@ -1,0 +1,26 @@
+<div class="row mb-5">
+  <div *ngFor="let category of categoryList" class="col-12 mt-3">
+    <form #categoryFrom="ngForm" class="mb-5">
+      <h2>{{category['id']}}.kategória: {{category['name']}}</h2>
+      <div class="form-group">
+        <label for="categoryName">Név</label>
+        <input class="form-control" [(ngModel)]="category['name']" type="text" name="name" id="categoryName"
+          [disabled]="category.disabled" placeholder="A kategória neve" required>
+      </div>
+      <div class="form-group">
+        <label for="categoryDescription">Leírás</label>
+        <textarea class="form-control" [(ngModel)]="category['description']" type="text" name="description"
+          id="categoryDescription" rows="3" [disabled]="category.disabled" placeholder="Rövid leírás"
+          required></textarea>
+      </div>
+      <button *ngIf="update == true" [disabled]="categoryFrom.invalid" class="btn btn-success mt-3 mt-md-0 mr-3"
+        (click)="onUpdateCategory(category)">Szerkesztés</button>
+      <button *ngIf="update == false" [disabled]="categoryFrom.invalid" class="btn btn-info mt-3 mt-md-0 mr-3"
+        (click)="onSaveCategory(category)">Mentés</button>
+      <button *ngIf="update == false" [disabled]="categoryFrom.invalid" class="btn btn-warning mt-3 mt-md-0 mr-3"
+        (click)="onDeleteCategory(category)">Törlés</button>
+      <button *ngIf="update == false" (click)="onCancel(category)" class=" btn btn-secondary mt-3 mt-md-0"
+        type="submit">Mégsem</button>
+    </form>
+  </div>
+</div>

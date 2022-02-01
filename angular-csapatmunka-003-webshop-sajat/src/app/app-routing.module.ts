@@ -1,3 +1,4 @@
+import { EditCategoryComponent } from './page/edit-category/edit-category.component';
 import { ViewProductComponent } from './common/view-product/view-product.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'viewProduct/:id',
     component: EditProductComponent,
+  },
+  {
+    path: 'editCategory',
+    component: EditCategoryComponent,
   },
   {
     path: '**',

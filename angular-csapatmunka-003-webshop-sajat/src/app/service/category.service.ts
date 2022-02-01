@@ -1,36 +1,37 @@
 import { Category } from 'src/app/model/category';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  categoryList: Category[] = [{
-    id: 1,
-    name: "LEGO DUPLO",
-    description: "Már 50 éve jelennek meg a nagy álmokat szövögető kis alkotóknak szánt újabb és újabb DUPLO készletek. Az építőtömböket és -készleteket arra terveztük, hogy játékos tanulás útján járuljanak hozzá a gyermekek fejlődéséhez. Válogass termékeink közül a legkisebbeknek!",
-    disabled: true
-  }, {
-    id: 2,
-    name: "LEGO",
-    description: "Fejleszd gyermeked kreativitását a LEGO készletekkel! Fedezd fel kedvező ajánlatainkat, válogass széles termékkínálatunkból!",
-    disabled: true
-  }]
+  jsonUrl: string = environment.jsonUrl
+  entityName: string = 'category'
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAll(): Category[] {
-    return this.categoryList;
+  getAll() : Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.jsonUrl}${this.entityName}`);
   }
 
-  getOne(id: number): Category {
-    return this.categoryList.filter(category => category.id === id)[0];
+  getOne(id: string | number) : Observable<Category> {
+    return this.http.get<Category>(`${this.jsonUrl}${this.entityName}/${id}`);
   }
 
- create(category: Category): void {
-   category.id = this.categoryList.length+1
-   category.disabled = true
-    this.categoryList.push(category);
+  update(category: Category): Observable<Category> {
+    return this.http.patch<Category>(`${this.jsonUrl}${this.entityName}/${category.id}`, category)
+  }
+
+  create(category: Category): Observable<Category> {
+    category.disabled = true
+    return this.http.post<Category>(`${this.jsonUrl}${this.entityName}`, category);
+  }
+
+  remove(id: number): Observable<Category> {
+    return this.http.delete<Category>(`${this.jsonUrl}${this.entityName}/${id}`)
   }
 }

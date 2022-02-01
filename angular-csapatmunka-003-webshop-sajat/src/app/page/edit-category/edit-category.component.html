@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mb-5 mt-2">
+    <div class="col-12 pl-md-0 d-flex flex-md-row flex-column">
+      <button (click)="onAddCategory()" [hidden]="newCategory == true" class="btn btn-info mr-md-3 mb-3 mb-md-0">Új
+        kategória
+        hozzáadása</button>
+      <button [routerLink]="['/admin']" class="btn btn-secondary">Vissza az admin oldalra</button>
+    </div>
+  </div>
+  <div class="row mb-5" *ngIf="newCategory === true">
+    <div class="col-12">
+      <app-new-category [newCategory]="newCategory"></app-new-category>
+    </div>
+  </div>
+</div>
+<app-category-editor></app-category-editor>
