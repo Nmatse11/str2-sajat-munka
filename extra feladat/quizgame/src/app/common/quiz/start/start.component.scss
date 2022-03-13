@@ -1,0 +1,19 @@
+.icon {
+  font-size: 5rem;
+
+  @media screen and (max-width: 760px) {
+    display: none;
+  }
+}
+
+.h3, .h4 {
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
+  }
+}
+
+
+.forward {
+  font-size: 2rem;
+}

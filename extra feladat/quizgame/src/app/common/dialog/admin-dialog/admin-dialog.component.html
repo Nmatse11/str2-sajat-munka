@@ -1,0 +1,16 @@
+<form #adminForm="ngForm">
+  <h2 mat-dialog-title class="text-center">{{ data.message }}</h2>
+  <div mat-dialog-content class="text-center">
+    <input type="text" pattern="admin" name="password" [(ngModel)]="password">
+    <div [hidden]="adminForm.controls['password']?.valid || adminForm.controls['password']?.pristine"
+      class="error-message text-danger mt-1">
+      A megadott jelszó hibás
+    </div>
+  </div>
+
+  <div class=" d-flex justify-content-center align-item-center mt-4">
+    <input class="btn btn-success confirm-ok mr-3" type="button" value="Belépés" [mat-dialog-close]="true"
+      [disabled]="adminForm.invalid">
+    <input class="btn btn-danger confirm-cancel" type="button" value="Mégse" [mat-dialog-close]="false">
+  </div>
+</form>
