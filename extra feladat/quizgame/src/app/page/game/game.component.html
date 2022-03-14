@@ -7,7 +7,7 @@
 </div>
 <div @fadeAnimation class="col-12 d-flex flex-column flex-md-row flex-md-wrap justify-content-center"
   *ngIf="categories && selectedCategories">
-  <div class="spinner d-flex justify-content-center" *ngIf="!categories && selectedCategories">
+  <div class="spinner d-flex justify-content-center" *ngIf="!categories && !selectedCategories">
     <mat-spinner></mat-spinner>
   </div>
   <div class="col-md-6 col-xl-4" *ngFor="let category of selectedCategories" [ngSwitch]="category.name">
