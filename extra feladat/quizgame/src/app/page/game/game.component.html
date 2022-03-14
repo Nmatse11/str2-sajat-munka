@@ -1,45 +1,48 @@
-<app-game-data @fadeAnimation></app-game-data>
+<app-game-data *ngIf="player && gameOn" @fadeAnimation [player]="player"></app-game-data>
 <div class="col-12 col-lg-8 offset-lg-2">
-  <app-charts></app-charts>
+  <app-charts *ngIf="player && gameOn" @fadeAnimation [player]="player"></app-charts>
 </div>
-<div class="spinner d-flex justify-content-center" *ngIf="isLoading">
+<div class="spinner d-flex justify-content-center" *ngIf="isLoading || !gameOn ">
   <mat-spinner></mat-spinner>
 </div>
 <div @fadeAnimation class="col-12 d-flex flex-column flex-md-row flex-md-wrap justify-content-center"
-  *ngIf="categories">
-  <div class="col-md-6 col-xl-4" *ngFor="let category of categories" [ngSwitch]="category.name">
+  *ngIf="categories && selectedCategories">
+  <div class="spinner d-flex justify-content-center" *ngIf="!categories && selectedCategories">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="col-md-6 col-xl-4" *ngFor="let category of selectedCategories" [ngSwitch]="category.name">
     <div class="col-12" *ngSwitchCase="'disney'">
-      <app-disney-card></app-disney-card>
+      <app-disney-card [round]="round" [allOfRound]="allOfRound" [category]="categories[5]"></app-disney-card>
     </div>
     <div class="col-12" *ngSwitchCase="'flag'">
-      <app-flag-card></app-flag-card>
+      <app-flag-card [round]="round" [allOfRound]="allOfRound" [category]="categories[10]"></app-flag-card>
     </div>
     <div class="col-12" *ngSwitchCase="'football'">
-      <app-football-card></app-football-card>
+      <app-football-card [round]="round" [allOfRound]="allOfRound" [category]="categories[9]"></app-football-card>
     </div>
     <div class="col-12" *ngSwitchCase="'geography'">
-      <app-geography-card></app-geography-card>
+      <app-geography-card [round]="round" [allOfRound]="allOfRound" [category]="categories[6]"></app-geography-card>
     </div>
     <div class="col-12" *ngSwitchCase="'grammar'">
-      <app-grammar-card></app-grammar-card>
+      <app-grammar-card [round]="round" [allOfRound]="allOfRound" [category]="categories[8]"></app-grammar-card>
     </div>
     <div class="col-12" *ngSwitchCase="'history'">
-      <app-history-card></app-history-card>
+      <app-history-card [round]="round" [allOfRound]="allOfRound" [category]="categories[4]"></app-history-card>
     </div>
     <div class="col-12" *ngSwitchCase="'image'">
-      <app-image-card></app-image-card>
+      <app-image-card [round]="round" [allOfRound]="allOfRound" [category]="categories[7]"></app-image-card>
     </div>
     <div class="col-12" *ngSwitchCase="'math'">
-      <app-math-card></app-math-card>
+      <app-math-card [round]="round" [allOfRound]="allOfRound" [category]="categories[0]"></app-math-card>
     </div>
     <div class="col-12" *ngSwitchCase="'movie'">
-      <app-movie-card></app-movie-card>
+      <app-movie-card [round]="round" [allOfRound]="allOfRound" [category]="categories[3]"></app-movie-card>
     </div>
     <div class="col-12" *ngSwitchCase="'music'">
-      <app-music-card></app-music-card>
+      <app-music-card [round]="round" [allOfRound]="allOfRound" [category]="categories[2]"></app-music-card>
     </div>
     <div class="col-12" *ngSwitchCase="'poetry'">
-      <app-poetry-card></app-poetry-card>
+      <app-poetry-card [round]="round" [allOfRound]="allOfRound" [category]="categories[1]"></app-poetry-card>
     </div>
 
   </div>

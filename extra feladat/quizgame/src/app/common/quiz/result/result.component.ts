@@ -7,6 +7,7 @@ import { trigger, transition, style, animate } from '@angular/animations'
 import { PlayerService } from 'src/app/service/player.service';
 import { CategoryService } from 'src/app/service/category.service';
 import { OverlayService } from 'src/app/service/overlay.service';
+import { HuntextService } from 'src/app/service/huntext.service';
 
 @Component({
   selector: 'app-result',
@@ -34,6 +35,7 @@ export class ResultComponent implements OnInit {
   @Input() startScore!: number
   @Input() betSize!: number
   @Input() rata!: number
+  @Input() hunrata!: string
   rataString!: string
   @Input() win!: number
   @Input() lose!: number
@@ -50,6 +52,7 @@ export class ResultComponent implements OnInit {
     private playerService: PlayerService,
     private categoryService: CategoryService,
     private toplistService: ToplistService,
+    private hunTextService: HuntextService,
     private router: Router,
     private overlayService: OverlayService
   ) { }
@@ -60,7 +63,6 @@ export class ResultComponent implements OnInit {
     }, 1000)
     //Helyes válaszok száma
     this.winNumber = this.winNumberArray.filter(item => item === true).length
-    this.rataString = (this.rata === 2) ? 'kétszeresét' : (this.rata === 3) ? 'háromszorosát' : 'ötszörösét'
     this.setEndScore()
     this.updateCategoryData(this.winNumber)
     setTimeout(() => {clearInterval(this.interval), this.overlayService.close(), this.router.navigate(['/', 'gameend'])}, 14000)
@@ -116,7 +118,7 @@ export class ResultComponent implements OnInit {
     //Az összes lejátszott kör végén a játék megfelelő adatainak lementése a Toplista adatbázisába
     if (player.round > player.allOfRound) {
     this.toplistItem.name = player.name
-    this.toplistItem.level = (player.gamelevel === 1) ? 'Könnyű' : (player.gamelevel === 2) ? 'Közepes' : 'Nehéz'
+    this.toplistItem.level = this.hunTextService.levelnames[player.gamelevel - 1]
     this.toplistItem.end_score = player.end_score
     this.toplistItem.allOfRound = player.allOfRound
        this.toplistService.create(this.toplistItem).subscribe(toplist => toplist)

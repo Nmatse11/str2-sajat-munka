@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs';
 import { DeleteDialogComponent } from 'src/app/common/dialog/delete-dialog/delete-dialog.component';
 import { Question } from 'src/app/model/question';
 import { CategoryService } from 'src/app/service/category.service';
+import { HuntextService } from 'src/app/service/huntext.service';
 import { QuestionService } from 'src/app/service/question.service';
 
 @Component({
@@ -27,6 +28,7 @@ export class EditComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private questionService: QuestionService,
     private categoryService: CategoryService,
+    public huntextService: HuntextService,
     private router: Router,
     private dialog: MatDialog
   ) { }

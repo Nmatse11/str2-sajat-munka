@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="category">
   <div class="card-header {{ colorClass }} text-center">
     <h2>{{ title }}</h2>
   </div>
@@ -9,7 +9,7 @@
           [disabled]="questionLevel1status || !level1status"
           [ngClass]="(questionLevel1status || !level1status) ? 'notAllowed' : ''"
           [ngClass]="(round === allOfRound + 1) ? 'endOfGame' : ''">
-          <h3>Könnyű</h3>
+          <h3>{{ huntextService.levelnames[0] }}</h3>
         </button>
         <div *ngIf="questionLevel1status === false && level1status === true"
           class="col-4 d-flex flex-column justify-content-center">
@@ -36,7 +36,7 @@
           [disabled]="questionLevel2status || !level2status"
           [ngClass]="(questionLevel2status || !level2status) ? 'notAllowed' : ''"
           [ngClass]="(round === 11) ? 'endOfGame' : ''">
-          <h3>Közepes</h3>
+          <h3>{{ huntextService.levelnames[1] }}</h3>
         </button>
         <div *ngIf="questionLevel2status === false && level2status === true"
           class="col-4 d-flex flex-column justify-content-center">
@@ -61,7 +61,7 @@
           [disabled]="questionLevel3status || !level3status"
           [ngClass]="(questionLevel3status || !level3status) ? 'notAllowed' : ''"
           [ngClass]="(round === 11) ? 'endOfGame' : ''">
-          <h3>Nehéz</h3>
+          <h3>{{ huntextService.levelnames[2] }}</h3>
         </button>
         <div *ngIf="questionLevel3status === false && level3status === true"
           class="col-4 d-flex flex-column justify-content-center">

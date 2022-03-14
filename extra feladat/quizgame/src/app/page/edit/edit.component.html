@@ -28,9 +28,9 @@
                   <label for="questionlevel">Nehézség *</label>
                   <select class="form-control" [(ngModel)]="question.questionlevel" type="number" name="questionlevel"
                     id="questionlevel" required>
-                    <option [ngValue]='answerNumber[0]'>Könnyű</option>
-                    <option [ngValue]='answerNumber[1]'>Közepes</option>
-                    <option [ngValue]='answerNumber[2]'>Nehéz</option>
+                    <option [ngValue]='answerNumber[0]'>{{ huntextService.levelnames[0] }}</option>
+                    <option [ngValue]='answerNumber[1]'>{{ huntextService.levelnames[0] }}</option>
+                    <option [ngValue]='answerNumber[2]'>{{ huntextService.levelnames[0] }}</option>
                   </select>
                 </div>
               </div>

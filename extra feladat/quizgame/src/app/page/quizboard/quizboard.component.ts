@@ -4,6 +4,7 @@ import { QuestionService } from 'src/app/service/question.service';
 import { PlayerService } from 'src/app/service/player.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Question } from 'src/app/model/question';
+import { HuntextService } from 'src/app/service/huntext.service';
 
 @Component({
   selector: 'app-quizboard',
@@ -20,6 +21,7 @@ export class QuizboardComponent implements OnInit {
   startScore!: number
   betSize!: number
   rata!: number
+  hunrata!: string
   win!: number
   lose!: number
   bonus!: number
@@ -53,7 +55,8 @@ export class QuizboardComponent implements OnInit {
   constructor(
     private playerService: PlayerService,
     private questionService: QuestionService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private hunTextService: HuntextService
   ) { }
 
   ngOnInit(): void {
@@ -88,11 +91,12 @@ export class QuizboardComponent implements OnInit {
               this.round = player.round
               this.category = player.category
               this.hunCategory = player.hunCategory
-              this.questionlevel = (player.questionlevel === 1) ? 'Könnyű' : (player.questionlevel === 2) ? 'Közepes' : 'Nehéz',
+              this.questionlevel = this.hunTextService.levelnames[player.questionlevel-1]
                 this.startScore = (player.end_score != 0 && player.round > 1) ? player.end_score : player.start_score
               this.betSize = player.bet
-              this.rata = (player.questionlevel === 1) ? 2 : (player.questionlevel === 2) ? 3 : 5
-              this.bonus = (this.questionlevel === 'Könnyű') ? 100 : (this.questionlevel === 'Közepes') ? 300 : 500
+              this.rata = this.hunTextService.ratanumber[player.questionlevel-1]
+              this.hunrata = this.hunTextService.ratanames[player.questionlevel-1]
+              this.bonus = this.hunTextService.bonusnumber[player.questionlevel-1]
               this.win = this.startScore + this.betSize * this.rata
               this.lose = this.startScore - this.betSize
 

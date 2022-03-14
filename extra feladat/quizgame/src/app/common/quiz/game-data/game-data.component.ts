@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Player } from 'src/app/model/player';
+import { HuntextService } from 'src/app/service/huntext.service';
 import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
@@ -9,16 +10,12 @@ import { PlayerService } from 'src/app/service/player.service';
 })
 export class GameDataComponent implements OnInit {
 
-  player: Player = new Player()
+  @Input() player!: Player
 
   constructor(
-    private playerService: PlayerService
+    public huntextService: HuntextService
   ) { }
 
-  ngOnInit(): void {
-    this.playerService.getOne(1).subscribe(
-      player => this.player = player
-      )
-  }
+  ngOnInit(): void { }
 
 }

@@ -10,7 +10,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
-import { HeaderComponent } from './common/header/header.component';
 
 // Angular Material Components
 import { MatDialogModule } from '@angular/material/dialog';
@@ -85,7 +84,6 @@ import { GameendComponent } from './page/gameend/gameend.component';
     AppComponent,
     SidebarComponent,
     HomeComponent,
-    HeaderComponent,
     GameDataComponent,
     BaseCardComponent,
     DisneyCardComponent,

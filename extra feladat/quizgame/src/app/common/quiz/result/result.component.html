@@ -20,7 +20,7 @@
           class="font-weight-bold">{{ betSize | customNumber }}</span>) elveszítetted.</li>
       <li @fadeAnimation *ngIf="winNumber > 3 && timer >= 6" class="h4 list-group-item">A feltett <span
           class="font-weight-bold">
-          {{ betSize | customNumber }} pont</span> {{ rataString }} megnyerted.</li>
+          {{ betSize | customNumber }} pont</span> {{ hunrata }} megnyerted.</li>
       <li @fadeAnimation *ngIf="winNumber === 5  && timer >= 8 && bonus" class="h4 list-group-item"><span
           class="font-weight-bold">+{{ bonus }}</span> bónuszpontot is szereztél.</li>
       <li @fadeAnimation *ngIf="winNumber === 5  && timer >= 10 && bonus" class="h2 list-group-item">Így a

@@ -19,9 +19,7 @@
         <h3 class="font-weight-bold"> Szint: </h3>
       </div>
       <div class="col-6 col-md-4">
-        <h3 *ngIf="player.gamelevel === 1"> Könnyű</h3>
-        <h3 *ngIf="player.gamelevel === 2"> Közepes</h3>
-        <h3 *ngIf="player.gamelevel === 3"> Nehéz</h3>
+        <h3>{{ huntextService.levelnames[player.gamelevel-1] }}</h3>
       </div>
       <div class="col-6 col-md-8 text-right">
         <h3 class="font-weight-bold"> Kör:</h3>

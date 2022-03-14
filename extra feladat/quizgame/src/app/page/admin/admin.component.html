@@ -74,15 +74,15 @@
               <div class="row d-flex flex-column text-left">
                 <mat-checkbox name="level1" #level1 id="level1"
                   (change)="saveFilterItem($event.checked, 'questionlevel', 1)">
-                  Könnyű
+                  {{ huntextService.levelnames[0] }}
                 </mat-checkbox>
                 <mat-checkbox name="level2" #level2 id="level2"
                   (change)="saveFilterItem($event.checked, 'questionlevel', 2)">
-                  Közepes
+                  {{ huntextService.levelnames[1] }}
                 </mat-checkbox>
                 <mat-checkbox name="level3" #level3 id="level3"
                   (change)="saveFilterItem($event.checked, 'questionlevel', 3)">
-                  Nehéz
+                  {{ huntextService.levelnames[2] }}
                 </mat-checkbox>
               </div>
             </section>
@@ -119,10 +119,8 @@
               </ng-container>
               <ng-container matColumnDef="questionlevel">
                 <th mat-header-cell *matHeaderCellDef class="text-center"> Nehézség </th>
-                <td mat-cell *matCellDef="let question" class="admintd"> {{ (question.questionlevel === 1) ? 'Könnyű' :
-                  (question.questionlevel === 2) ?
-                  'Közepes' : 'Nehéz'
-                  }} </td>
+                <td mat-cell *matCellDef="let question" class="admintd">
+                  {{ huntextService.levelnames[question.questionlevel-1] }} </td>
                 <td mat-footer-cell *matFooterCellDef></td>
               </ng-container>
               <ng-container matColumnDef="question">

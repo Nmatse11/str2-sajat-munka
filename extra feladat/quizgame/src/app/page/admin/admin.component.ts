@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { AdminDialogComponent } from 'src/app/common/dialog/admin-dialog/admin-dialog.component';
 import { DeleteDialogComponent } from 'src/app/common/dialog/delete-dialog/delete-dialog.component';
 import { Question } from 'src/app/model/question';
+import { HuntextService } from 'src/app/service/huntext.service';
 import { QuestionService } from 'src/app/service/question.service';
 
 @Component({
@@ -38,6 +39,7 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private questionService: QuestionService,
+    public huntextService: HuntextService,
     private dialog: MatDialog,
     private router: Router,
   ) { }

@@ -17,8 +17,7 @@ export class QuestionService extends BaseService<Question> {
     public override http: HttpClient,
     public router: Router,
     public dialog: MatDialog,
-    private playerService: PlayerService,
-    private previewDialog: OverlayService
+    private playerService: PlayerService
   ) {
     super(http);
     this.entityName = 'question';

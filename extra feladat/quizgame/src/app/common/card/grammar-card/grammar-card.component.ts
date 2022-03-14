@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
-import { PlayerService } from 'src/app/service/player.service';
 import { QuestionService } from 'src/app/service/question.service';
-
 @Component({
   selector: 'app-grammar-card',
   templateUrl: './grammar-card.component.html',
@@ -10,8 +9,9 @@ import { QuestionService } from 'src/app/service/question.service';
 })
 export class GrammarCardComponent implements OnInit {
 
+  @Input() category!: Category;
   title!: string;
-  category!: string;
+  categoryname!: string;
   colorClass: string = 'card-header-rose';
   correctNumberLevel1!: number;
   correctNumberLevel2!: number;
@@ -23,47 +23,40 @@ export class GrammarCardComponent implements OnInit {
   level2status: boolean = true;
   level3status: boolean = true;
 
-  round!: number
+  @Input() round!: number
+  @Input() allOfRound!: number
 
   constructor(
     private questionService: QuestionService,
-    private categoryService: CategoryService,
-    private playerService: PlayerService
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
-  //A kategórihoz tartozó elérhető kérdések, nehézségi szintek frissítése
-  this.categoryService.getAll().subscribe(category => category.filter(category => category.name === 'grammar')
-    .map(category => {
-
-      this.playerService.getOne(1).subscribe(player => {this.round = player.round
-
-        this.title = category.nameHUN
-        this.category = category.name
-        this.level1status = (this.categoryService.roundOfLevel(category.sumOfNumberLevel1) === 0) ? false : true
-        this.level2status = (this.categoryService.roundOfLevel(category.sumOfNumberLevel2) === 0) ? false : true
-        this.level3status = (this.categoryService.roundOfLevel(category.sumOfNumberLevel3) === 0) ? false : true
-        this.questionLevel1status = category.usedLevel1
-        this.questionLevel2status = category.usedLevel2
-        this.questionLevel3status = category.usedLevel3
-        this.correctNumberLevel1 = category.winNumberLevel1
-        this.correctNumberLevel2 = category.winNumberLevel2
-        this.correctNumberLevel3 = category.winNumberLevel3
-        })
-    }))
+    //A kategórihoz tartozó elérhető kérdések, nehézségi szintek beállítása
+      this.title = this.category.nameHUN
+      this.categoryname = this.category.name
+      this.level1status = (this.categoryService.roundOfLevel(this.category.sumOfNumberLevel1) === 0) ? false : true
+      this.level2status = (this.categoryService.roundOfLevel(this.category.sumOfNumberLevel2) === 0) ? false : true
+      this.level3status = (this.categoryService.roundOfLevel(this.category.sumOfNumberLevel3) === 0) ? false : true
+      this.questionLevel1status = this.category.usedLevel1
+      this.questionLevel2status = this.category.usedLevel2
+      this.questionLevel3status = this.category.usedLevel3
+      this.correctNumberLevel1 = this.category.winNumberLevel1
+      this.correctNumberLevel2 = this.category.winNumberLevel2
+      this.correctNumberLevel3 = this.category.winNumberLevel3
   }
 
   //Kattintás esemény kezelése
   onSelectLevel1(): void {
-    this.questionService.onSelectQuestion(this.category, 1, this.title)
+    this.questionService.onSelectQuestion(this.categoryname, 1, this.title)
   }
 
   onSelectLevel2(): void {
-    this.questionService.onSelectQuestion(this.category, 2, this.title)
+    this.questionService.onSelectQuestion(this.categoryname, 2, this.title)
   }
 
   onSelectLevel3(): void {
-    this.questionService.onSelectQuestion(this.category, 3, this.title)
+    this.questionService.onSelectQuestion(this.categoryname, 3, this.title)
   }
 
 }

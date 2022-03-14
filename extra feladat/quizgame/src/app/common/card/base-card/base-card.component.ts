@@ -1,4 +1,6 @@
+import { Category } from 'src/app/model/category';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { HuntextService } from 'src/app/service/huntext.service';
 import { PlayerService } from 'src/app/service/player.service';
 
 @Component({
@@ -8,6 +10,7 @@ import { PlayerService } from 'src/app/service/player.service';
 })
 export class BaseCardComponent implements OnInit {
 
+  @Input() category!: Category;
   @Input() title!: string;
   @Input() colorClass!: string;
   @Input() correctNumberLevel1!: number;
@@ -24,12 +27,13 @@ export class BaseCardComponent implements OnInit {
   @Output() questionLevel2: EventEmitter<void> = new EventEmitter();
   @Output() questionLevel3: EventEmitter<void> = new EventEmitter();
 
-  round!: number
-  allOfRound!: number
+  @Input() round!: number
+  @Input() allOfRound!: number
 
 
   constructor(
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    public huntextService: HuntextService
     ) { }
 
   ngOnInit(): void {

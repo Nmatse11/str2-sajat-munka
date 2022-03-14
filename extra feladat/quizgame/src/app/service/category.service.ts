@@ -9,9 +9,10 @@ import { PlayerService } from './player.service';
 })
 export class CategoryService extends BaseService<Category> {
 
+  categoriesnames: string[] = ['disney', 'flag', 'football', 'geography', 'grammar', 'history', 'image', 'math', 'movie', 'music', 'poetry']
+
   constructor(
-    public override http: HttpClient,
-    private playerService: PlayerService
+    public override http: HttpClient
   ) {
     super(http);
     this.entityName = 'category';
