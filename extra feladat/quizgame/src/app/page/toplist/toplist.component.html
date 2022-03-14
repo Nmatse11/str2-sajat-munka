@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+      <div class="card text-center award" *ngIf="toplistLevel3.length != 0">
+        <div class="card-header card-header-danger">
+          <h1>Ranglista - Nehéz szint</h1>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped mt-5 table-responsive" *ngIf="toplistLevel3">
+            <thead class="thead-dark">
+              <tr class="text-center">
+                <th>Helyezés</th>
+                <th *ngFor="let key of keys">{{ key }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let player of toplistLevel3; let i = index" class="text-center">
+                <th>{{ i + 1 }}.</th>
+                <td>{{ player.name }}</td>
+                <td>{{ player.allOfRound }}</td>
+                <td class="font-weight-bold">{{ player.end_score | customNumber }} pont</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card text-center award" *ngIf="toplistLevel2.length != 0">
+        <div class="card-header card-header-success">
+          <h1>Ranglista - Közepes szint</h1>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped mt-5 table-responsive" *ngIf="toplistLevel2">
+            <thead class="thead-dark">
+              <tr class="text-center">
+                <th>Helyezés</th>
+                <th *ngFor="let key of keys">{{ key }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let player of toplistLevel2 ; let i = index" class="text-center">
+                <th>{{ i + 1 }}.</th>
+                <td>{{ player.name }}</td>
+                <td>{{ player.allOfRound }}</td>
+                <td class="font-weight-bold">{{ player.end_score | customNumber }} pont</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card text-center award" *ngIf="toplistLevel1.length != 0">
+        <div class="card-header card-header-info">
+          <h1>Ranglista - Könnyű szint</h1>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped mt-5 table-responsive" *ngIf="toplistLevel1">
+            <thead class="thead-dark">
+              <tr class="text-center">
+                <th>Helyezés</th>
+                <th *ngFor="let key of keys">{{ key }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let player of toplistLevel1 ; let i = index" class="text-center">
+                <th>{{ i + 1 }}.</th>
+                <td>{{ player.name }}</td>
+                <td>{{ player.allOfRound }}</td>
+                <td class="font-weight-bold">{{ player.end_score | customNumber }} pont</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

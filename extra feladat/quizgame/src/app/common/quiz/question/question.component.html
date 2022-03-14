@@ -1,0 +1,16 @@
+<div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-card @fadeAnimation class="mat-elevation-z5 col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-5"
+  *ngIf="question">
+  <mat-card-header class="d-flex flex-column">
+    <div class="text-dark text-center text-md-right mt-1">
+      <h1>{{ questionnumber }}/5</h1>
+    </div>
+    <div>
+      <mat-card-title class="py-5">
+        <h1 class="text-center question">{{ question }}</h1>
+      </mat-card-title>
+    </div>
+  </mat-card-header>
+</mat-card>

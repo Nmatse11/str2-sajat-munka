@@ -1,0 +1,11 @@
+.award {
+  margin-bottom: 8rem;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 6rem;
+  }
+}
+
+td {
+  width: 30%;
+}

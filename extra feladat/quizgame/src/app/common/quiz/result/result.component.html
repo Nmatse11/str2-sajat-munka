@@ -1,0 +1,33 @@
+<div class="col-lg-8 offset-lg-2 mt-3">
+  <div class="card text-center">
+    <div class="card-header card-header-danger">
+      <h1>Végetért az {{ round }}. kör!</h1>
+    </div>
+    <ul class="list-group list-group-flush mb-5" *ngIf="round">
+      <li @fadeAnimation *ngIf="timer >= 1" class="h3 list-group-item">
+        <span class="font-weight-bold">{{ hunCategory }}</span> témakörben a feltett
+        <span class="font-weight-bold">{{ questionlevel }}</span> kérdések közül
+      <li @fadeAnimation *ngIf="timer >= 2" class="h3 list-group-item"><span class="font-weight-bold">5/{{ winNumber |
+          customNumber
+          }}</span> kérdésre válaszoltál helyesen</li>
+      <li @fadeAnimation *ngIf="winNumber <= 3 && timer >= 4" class="h4 list-group-item">Ez sajnos azt jelenti, hogy
+        ebben a körben most <span class="font-weight-bold">vesztettél</span>.
+      </li>
+      <li @fadeAnimation *ngIf="winNumber > 3 && timer >= 4" class="h4 list-group-item font-weight-bold">Ez azt
+        jelenti, hogy győztél!
+      </li>
+      <li @fadeAnimation *ngIf="winNumber <= 3 && timer >= 6" class="h4 list-group-item">A feltett pontokat (<span
+          class="font-weight-bold">{{ betSize | customNumber }}</span>) elveszítetted.</li>
+      <li @fadeAnimation *ngIf="winNumber > 3 && timer >= 6" class="h4 list-group-item">A feltett <span
+          class="font-weight-bold">
+          {{ betSize | customNumber }} pont</span> {{ hunrata }} megnyerted.</li>
+      <li @fadeAnimation *ngIf="winNumber === 5  && timer >= 8 && bonus" class="h4 list-group-item"><span
+          class="font-weight-bold">+{{ bonus }}</span> bónuszpontot is szereztél.</li>
+      <li @fadeAnimation *ngIf="winNumber === 5  && timer >= 10 && bonus" class="h2 list-group-item">Így a
+        pontegyenleged: <span class="font-weight-bold">{{ endScore }} pont</span></li>
+      <li @fadeAnimation *ngIf="winNumber != 5 && timer >= 8 && bonus" class="h2 list-group-item">Új pontegyenleged:
+        <span class="font-weight-bold">{{ endScore | customNumber }} pont</span>
+      </li>
+    </ul>
+  </div>
+</div>

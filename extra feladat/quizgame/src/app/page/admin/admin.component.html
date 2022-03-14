@@ -1,0 +1,175 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <div class="card text-center">
+        <div class=" card-header card-header-danger">
+          <h1>Kérdések listája</h1>
+        </div>
+        <div class="card-body">
+          <div class="col-12 d-flex flex-column flex-xl-row flex-wrap">
+            <section class="col-10 d-flex flex-column" *ngIf="categories.length === 11">
+              <h4 class="font-weight-bold text-left">Témakörök</h4>
+              <div class="d-flex flex-column flex-sm-row">
+                <div class="d-flex flex-column flex-lg-row">
+                  <div class="row d-flex flex-column mr-5 text-left">
+                    <mat-checkbox name="cat1" #cat1 id="cat1"
+                      (change)="saveFilterItem($event.checked, 'category', categories[0])">
+                      Matematika
+                    </mat-checkbox>
+                    <mat-checkbox name="cat2" #cat2 id="cat2"
+                      (change)="saveFilterItem($event.checked, 'category', categories[1])">
+                      Versek
+                    </mat-checkbox>
+                    <mat-checkbox name="cat3" #cat3 id="cat3"
+                      (change)="saveFilterItem($event.checked, 'category', categories[2])">
+                      Zene
+                    </mat-checkbox>
+                  </div>
+                  <div class="row d-flex flex-column mr-5 text-left">
+                    <mat-checkbox name="cat4" #cat4 id="cat4"
+                      (change)="saveFilterItem($event.checked, 'category', categories[3])">
+                      Filmek
+                    </mat-checkbox>
+                    <mat-checkbox name="cat5" #cat5 id="cat5"
+                      (change)="saveFilterItem($event.checked, 'category', categories[4])">
+                      Történelem
+                    </mat-checkbox>
+                    <mat-checkbox name="cat6" #cat6 id="cat6"
+                      (change)="saveFilterItem($event.checked, 'category', categories[5])">
+                      Disney
+                    </mat-checkbox>
+                  </div>
+                </div>
+                <div class="d-flex flex-column flex-lg-row">
+                  <div class="row d-flex flex-column mr-5 text-left">
+                    <mat-checkbox name="cat7" #cat7 id="cat7"
+                      (change)="saveFilterItem($event.checked, 'category', categories[6])">
+                      Földrajz
+                    </mat-checkbox>
+                    <mat-checkbox name="cat8" #cat8 id="cat8"
+                      (change)="saveFilterItem($event.checked, 'category', categories[7])">
+                      Képfelismerés
+                    </mat-checkbox>
+                    <mat-checkbox name="cat9" #cat9 id="cat9"
+                      (change)="saveFilterItem($event.checked, 'category', categories[8])">
+                      Nyelvtan
+                    </mat-checkbox>
+                  </div>
+                  <div class="row d-flex flex-column mr-5 text-left">
+                    <mat-checkbox name="cat10" #cat10 id="cat10"
+                      (change)="saveFilterItem($event.checked, 'category', categories[9])">
+                      Foci
+                    </mat-checkbox>
+                    <mat-checkbox name="cat11" #cat11 id="cat11"
+                      (change)="saveFilterItem($event.checked, 'category', categories[10])">
+                      Zászlók
+                    </mat-checkbox>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="col-4 mt-4" *ngIf="categories.length === 11">
+              <h4 class="font-weight-bold text-left">Nehézségek</h4>
+              <div class="row d-flex flex-column text-left">
+                <mat-checkbox name="level1" #level1 id="level1"
+                  (change)="saveFilterItem($event.checked, 'questionlevel', 1)">
+                  {{ huntextService.levelnames[0] }}
+                </mat-checkbox>
+                <mat-checkbox name="level2" #level2 id="level2"
+                  (change)="saveFilterItem($event.checked, 'questionlevel', 2)">
+                  {{ huntextService.levelnames[1] }}
+                </mat-checkbox>
+                <mat-checkbox name="level3" #level3 id="level3"
+                  (change)="saveFilterItem($event.checked, 'questionlevel', 3)">
+                  {{ huntextService.levelnames[2] }}
+                </mat-checkbox>
+              </div>
+            </section>
+
+            <section class="col-6 mb-3 mt-3 d-flex justify-content-start align-items-end"
+              *ngIf="categories.length === 11">
+              <div class="row">
+                <button class="btn btn-info mr-xl-5" (click)="setFilterArray()" [disabled]="disabled"><i
+                    class="material-icons">search</i>
+                  Keresés</button>
+                <button class="btn btn-success" [routerLink]="['/', 'edit','0']"><i
+                    class="material-icons">add_circle_outline</i>
+                  Új kérdést adok hozzá</button>
+              </div>
+            </section>
+          </div>
+
+          <mat-paginator [hidden]="!questionList" showFirstLastButtons [pageSize]="10"
+            [pageSizeOptions]="[10, 20, 30, 40, 50, 100]" [length]="questionList?.data?.length" class="sticky-top">
+          </mat-paginator>
+          <div class="table-responsive">
+            <table *ngIf="questionList; else spinner" mat-table [dataSource]="questionList"
+              class="mat-elevation-z8 admintable">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef class="text-center"> # </th>
+                <td mat-cell *matCellDef="let question" class="admintd"> {{ question.id }} </td>
+                <td mat-footer-cell *matFooterCellDef> <span class="font-weight-bold">Összesen</span> </td>
+              </ng-container>
+              <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef class="text-center"> Kategória </th>
+                <td mat-cell *matCellDef="let question" class="admintd"> {{ question.category }} </td>
+                <td mat-footer-cell *matFooterCellDef> <span class="font-weight-bold">{{ numberOfRow | customNumber }}
+                    db</span> </td>
+              </ng-container>
+              <ng-container matColumnDef="questionlevel">
+                <th mat-header-cell *matHeaderCellDef class="text-center"> Nehézség </th>
+                <td mat-cell *matCellDef="let question" class="admintd">
+                  {{ huntextService.levelnames[question.questionlevel-1] }} </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+              </ng-container>
+              <ng-container matColumnDef="question">
+                <th mat-header-cell *matHeaderCellDef class="text-center"> Kérdés </th>
+                <td mat-cell *matCellDef="let question" class="admintd"> {{ question.question | textoverflow:15 }} </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+              </ng-container>
+              <ng-container matColumnDef="disabled">
+                <th mat-header-cell *matHeaderCellDef class="text-center"> Használható </th>
+                <td mat-cell *matCellDef="let question" class="admintd">
+                  <mat-slide-toggle [checked]="!question.disabled"
+                    [matTooltip]="question.disabled? 'Használt': 'Elérhető'" matTooltipPosition="before">
+                  </mat-slide-toggle>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+              </ng-container>
+              <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let question" class="admintd d-flex flex-row mt-2">
+                  <button mat-icon-button [routerLink]="['/', 'edit', question.id]" [disabled]="question.id <= 330"
+                    color="primary" matTooltip="Szerkesztés" matTooltipPosition="above" TooltipTouchGestures="auto"
+                    matTooltipClass="bg-primary">
+                    <span class="material-icons">edit</span>
+                  </button>
+                  <button mat-icon-button (click)="onDelete(question)" [disabled]="question.id <= 330" color="warn"
+                    matTooltip="Törlés" matTooltipPosition="above" TooltipTouchGestures="auto"
+                    matTooltipClass="bg-danger">
+                    <span class="material-icons">delete</span>
+                  </button>
+                </td>
+                <td mat-footer-cell *matFooterCellDef>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="columnsArray; sticky:true"></tr>
+              <tr mat-row *matRowDef="let row; columns: columnsArray;"></tr>
+              <tr mat-footer-row *matFooterRowDef="columnsArray; sticky:true"></tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- spinner -->
+<ng-template #spinner>
+  <div class="d-flex justify-content-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

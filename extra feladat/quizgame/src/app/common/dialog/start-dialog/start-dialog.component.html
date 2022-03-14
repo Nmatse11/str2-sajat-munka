@@ -1,0 +1,127 @@
+<div class="text-success text-center">
+  <h1 mat-dialog-title class="mb-3 font-weight-bold">{{ data.title }}</h1>
+</div>
+<mat-dialog-content class="dialog">
+  <div class="row">
+    <div *ngIf="player" class="col-12 mt-3">
+      <form #playerForm="ngForm" class="mb-2">
+        <div class="form-group mb-3">
+          <h4 *ngIf="numberAllOfRound < 10" class="text-danger text-center">Sajnos nincs elég kérdés az adatbázisban!
+          </h4>
+          <mat-label for="playerName">Név</mat-label>
+          <input class="form-control" [(ngModel)]="player.name" type="text" name="name" id="playerName"
+            placeholder="A játékos neve" required pattern="^([a-űA-Ű0-9_'\s-]{3,}){1,3}$">
+          <div [hidden]="playerForm.controls['name']?.valid || playerForm.controls['name']?.pristine"
+            class="error-message">
+            A névnek mininum 3 karakter hosszúnak kell lennie!
+          </div>
+        </div>
+        <fieldset class="mb-3">
+          <h3>Te szeretnéd kiválasztani a témaköröket?</h3>
+          <section class="d-flex flex-column">
+            <mat-checkbox name="random" id="playerRandom" #checkbox (change)="onSelectRandom(checkbox.checked)">
+              Igen
+            </mat-checkbox>
+          </section>
+          <h4 *ngIf="this.checkbox.checked === true && step < 6" class="text-muted">Válassz ki 6 témakört!</h4>
+          <h4 *ngIf="this.checkbox.checked === true && step > 6" class="text-danger">Maximum 6 témakört választhatsz!
+          </h4>
+          <h4 *ngIf="this.checkbox.checked === true && selectedRoundNumber < 10 && step === 6" class="text-danger">
+            A választott körök száma kevesebb, mint 10!</h4>
+          <section *ngIf="this.checkbox.checked === true" class="col-12 d-flex flex-row flex-wrap">
+            <div class="row d-flex flex-column mr-5">
+              <mat-checkbox name="cat1" #cat1 id="playerCat1" (change)="onSelectCat($event.checked, 0)"
+                [matTooltip]=" setTooltip(0) " matTooltipPosition="before">
+                {{ cat[0].nameHUN }} ({{ onNumberOfRound(0) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat2" #cat2 id="playerCat2" (change)="onSelectCat($event.checked, 1)"
+                [matTooltip]=" setTooltip(1) " matTooltipPosition="before">
+                {{ cat[1].nameHUN }} ({{ onNumberOfRound(1) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat3" #cat3 id="playerCat3" (change)="onSelectCat($event.checked, 2)"
+                [matTooltip]=" setTooltip(2) " matTooltipPosition="before">
+                {{ cat[2].nameHUN }} ({{ onNumberOfRound(2) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat4" #cat4 id="playerCat4" (change)="onSelectCat($event.checked, 3)"
+                [matTooltip]=" setTooltip(3) " matTooltipPosition="before">
+                {{ cat[3].nameHUN }} ({{ onNumberOfRound(3) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat5" #cat5 id="playerCat5" (change)="onSelectCat($event.checked, 4)"
+                [matTooltip]=" setTooltip(4) " matTooltipPosition="before">
+                {{ cat[4].nameHUN }} ({{ onNumberOfRound(4) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat6" #cat6 id="playerCat6" (change)="onSelectCat($event.checked, 5)"
+                [matTooltip]=" setTooltip(5) " matTooltipPosition="before">
+                {{ cat[5].nameHUN }} ({{ onNumberOfRound(5) }})
+              </mat-checkbox>
+            </div>
+            <div class="row d-flex flex-column">
+              <mat-checkbox name="cat7" #cat7 id="playerCat7" (change)="onSelectCat($event.checked, 6)"
+                [matTooltip]=" setTooltip(6) " matTooltipPosition="after">
+                {{ cat[6].nameHUN }} ({{ onNumberOfRound(6) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat8" #cat8 id="playerCat8" (change)="onSelectCat($event.checked, 7)"
+                [matTooltip]=" setTooltip(7) " matTooltipPosition="after">
+                {{ cat[7].nameHUN }} ({{ onNumberOfRound(7) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat9" #cat9 id="playerCat9" (change)="onSelectCat($event.checked, 8)"
+                [matTooltip]=" setTooltip(8) " matTooltipPosition="after">
+                {{ cat[8].nameHUN }} ({{ onNumberOfRound(8) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat10" #cat10 id="playerCat10" (change)="onSelectCat($event.checked, 9)"
+                [matTooltip]=" setTooltip(9) " matTooltipPosition="after">
+                {{ cat[9].nameHUN }} ({{ onNumberOfRound(9) }})
+              </mat-checkbox>
+              <mat-checkbox name="cat11" #cat11 id="playerCat11" (change)="onSelectCat($event.checked, 10)"
+                [matTooltip]=" setTooltip(10) " matTooltipPosition="after">
+                {{ cat[10].nameHUN }} ({{ onNumberOfRound(10) }})
+              </mat-checkbox>
+            </div>
+          </section>
+          <h4 *ngIf="step <= 6 && this.checkbox.checked === true && selectedRoundNumber != 0" class="text-muted">Maximum
+            körök száma: <span class="font-weight-bold">{{ selectedRoundNumber }}</span></h4>
+        </fieldset>
+        <fieldset class="mb-3">
+          <h3>Válassz nehézségi szintet!</h3>
+          <mat-radio-group name="level" [(ngModel)]="player.gamelevel" class="d-flex flex-column"
+            (change)="onSelectLevel($event.value)">
+            <mat-radio-button checked=true [value]='levelnumber[0]'>Könnyű - Kezdés: 8 000 pont</mat-radio-button>
+            <mat-radio-button [value]='levelnumber[1]'>Közepes - Kezdés: 5 000 pont</mat-radio-button>
+            <mat-radio-button [value]='levelnumber[2]'>Nehéz - Kezdés: 3 000 pont</mat-radio-button>
+          </mat-radio-group>
+        </fieldset>
+        <fieldset>
+          <h3>Válaszd ki, hogy hány kört szeretnél játszani!</h3>
+          <h4
+            *ngIf="step ===  6 && selectedRoundNumber > 10 && roundNumber > selectedRoundNumber && selectedRoundNumber != 0"
+            class="text-danger">Maximum {{ selectedRoundNumber }} kört jelölhetsz meg!</h4>
+          <div class="input-group mb-3">
+            <select [(ngModel)]="player.allOfRound" name="allOfRound" class="custom-select" id="inputGroupSelect02"
+              (change)="onSelectRoundNumber($event)">
+              <option selected="selected" value=10>10</option>
+              <option *ngIf="numberAllOfRound >= 11" value=11>11</option>
+              <option *ngIf="numberAllOfRound >= 12" value=12>12</option>
+              <option *ngIf="numberAllOfRound >= 13" value=13>13</option>
+              <option *ngIf="numberAllOfRound >= 14" value=14>14</option>
+              <option *ngIf="numberAllOfRound >= 15" value=15>15</option>
+              <option *ngIf="numberAllOfRound >= 16" value=16>16</option>
+              <option *ngIf="numberAllOfRound >= 17" value=17>17</option>
+              <option *ngIf="numberAllOfRound >= 18" value=18>18</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div class="d-flex justify-content-center align-item-center m-3">
+          <input
+            [disabled]="numberAllOfRound < 10 || this.checkbox.checked === true && selectedRoundNumber < 10
+            || this.checkbox.checked === true && step != 6 || this.checkbox.checked === true && roundNumber > selectedRoundNumber || playerForm.invalid"
+            class="btn btn-info confirm-ok mr-3" type="button" value="Játszok" [mat-dialog-close]="true"
+            (click)="onSave(player)">
+          <input class="btn btn-danger confirm-cancel" type="button" value="Mégsem játszok" [mat-dialog-close]="false">
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</mat-dialog-content>

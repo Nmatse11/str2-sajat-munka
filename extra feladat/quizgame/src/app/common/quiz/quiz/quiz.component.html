@@ -1,0 +1,100 @@
+<div class="spinner d-flex justify-content-center" *ngIf="!question">
+  <mat-spinner></mat-spinner>
+</div>
+<div @fadeAnimation class="card col-md-10 offset-md-1 col-lg-8 offset-lg-2 d-flex justify-content-center"
+  *ngIf="question">
+  <div class="card-header card-header-icon card-header-danger">
+    <div class="card-icon pt-4 pb-1">
+      <h1 class="timer text-center">{{ timer }}</h1>
+    </div>
+    <div class="text-dark text-right mt-2">
+      <h1>{{ questionnumber }}/5</h1>
+    </div>
+  </div>
+  <div @fadeAnimation class="card-body d-flex flex-column justify-content-center align-items-center">
+    <mat-card-title>
+      <h1 class="question text-center">{{ question }}</h1>
+    </mat-card-title>
+    <img *ngIf="image" mat-card-image [src]="'../assets/img/' " alt="Question image">
+    <div *ngIf="table" class="table-responsive">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="col-6">
+              <button type="button"
+                class="btn btn-info btn-block pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+                (click)="clickHandle(1)" [disabled]="disabled"
+                [ngClass]="(disabled === true && correctanswer === 1  || disabled === true && correctanswer === 1 && end === true) ? 'correct': ''">
+                <h1 class="py-5 py-md-0"><i class="material-icons">filter_tilt_shift</i></h1>
+                <h1 class="answer ml-2">{{ answers[0] }}</h1>
+              </button>
+            </td>
+            <td class="col-6">
+              <button type="button"
+                class="btn btn-success btn-block pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+                (click)="clickHandle(2)" [disabled]="disabled"
+                [ngClass]="(disabled === true && correctanswer === 2  || disabled === true && correctanswer === 2 && end === true) ? 'correct': ''">
+                <h1 class="py-5 py-md-0"><i class="material-icons">star</i></h1>
+                <h1 class="answer ml-2">{{ answers[1] }}</h1>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-6">
+              <button type="button"
+                class="btn btn-danger btn-block pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+                (click)="clickHandle(3)" [disabled]="disabled"
+                [ngClass]="(disabled === true && correctanswer === 3  || disabled === true && correctanswer === 3 && end === true) ? 'correct': ''">
+                <h1 class="py-5 py-md-0"><i class="material-icons">bubble_chart</i></h1>
+                <h1 class="answer ml-2">{{ answers[2] }}</h1>
+              </button>
+            </td>
+            <td class="col-6">
+              <button type="button"
+                class="btn btn-warning btn-block pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+                (click)="clickHandle(4)" [disabled]="disabled"
+                [ngClass]="(disabled === true && correctanswer === 4 || disabled === true && correctanswer === 4 && end === true) ? 'correct': ''">
+                <h1 class="py-5 py-md-0"><i class="material-icons">casino</i></h1>
+                <h1 class="answer ml-2">{{ answers[3] }}</h1>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="!table" class="col-12 btn-group d-flex flex-column justify-content-center">
+      <button type="button"
+        class="col-12 btn btn-info btn-block mb-3 pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+        (click)="clickHandle(1)" [disabled]="disabled"
+        [ngClass]="(disabled === true && correctanswer === 1  || disabled === true && correctanswer === 1 && end === true) ? 'correct': ''">
+        <h1 class="py-0"><i class="material-icons">filter_tilt_shift</i></h1>
+        <h1 class="answer ml-2">{{ answers[0] }}</h1>
+      </button>
+      <button type="button"
+        class="col-12 btn btn-success btn-block mb-3 pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+        (click)="clickHandle(2)" [disabled]="disabled"
+        [ngClass]="(disabled === true && correctanswer === 2  || disabled === true && correctanswer === 2 && end === true) ? 'correct': ''">
+        <h1 class="py-0"><i class="material-icons">star</i></h1>
+        <h1 class="answer ml-2">{{ answers[1] }}</h1>
+      </button>
+      <button type="button"
+        class="col-12 btn btn-danger btn-block mb-3 pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+        (click)="clickHandle(3)" [disabled]="disabled"
+        [ngClass]="(disabled === true && correctanswer === 3  || disabled === true && correctanswer === 3 && end === true) ? 'correct': ''">
+        <h1 class="py-0"><i class="material-icons">bubble_chart</i></h1>
+        <h1 class="answer ml-2">{{ answers[2] }}</h1>
+      </button>
+      <button type="button"
+        class="col-12 btn btn-warning btn-block pt-4 d-flex flex-row justify-content-center justify-content-md-start"
+        (click)="clickHandle(4)" [disabled]="disabled"
+        [ngClass]="(disabled === true && correctanswer === 4 || disabled === true && correctanswer === 4 && end === true) ? 'correct': ''">
+        <h1 class="py-0"><i class="material-icons">casino</i></h1>
+        <h1 class="answer ml-2">{{ answers[3] }}</h1>
+      </button>
+    </div>
+    <mat-card-title>
+      <h1 class="resulttext" *ngIf="win === true">Helyesen válaszoltál!</h1>
+      <h1 class="resulttext" *ngIf="win === false">Sajnos ez most nem sikerült!</h1>
+    </mat-card-title>
+  </div>
+</div>

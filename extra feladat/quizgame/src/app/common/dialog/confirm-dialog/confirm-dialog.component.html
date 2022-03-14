@@ -1,0 +1,55 @@
+<div class="text-success text-center">
+  <h1 class="mb-3 font-weight-bold">{{ data.title }}</h1>
+</div>
+<div class="mb-5" *ngIf="player">
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th>
+          <h2 class="pt-4 pb-0 mb-0 tr_text">Témakör</h2>
+        </th>
+        <th>
+          <h2 class="pt-4 pb-0 mb-0 tr_text">Nehézségi szint</h2>
+        </th>
+        <th>
+          <h2 class="pt-4 pb-0 mb-0 tr_text">Jelenlegi egyenleg</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-success text-white text-center">
+        <td>
+          <h1 class="pt-3 pb-1 td_text">{{ data.category }}</h1>
+        </td>
+        <td>
+          <h1 class="pt-3 pb-1 td_text">{{ data.level }}</h1>
+        </td>
+        <td>
+          <h1 class="pt-3 pb-1 td_text">{{ score | customNumber }} pont</h1>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="text-center">Ha nyersz ebben a fordulóban, akkor a feltett összeg <span class="font-weight-bold">{{
+      data.winrata }}</span> kapod meg!</h3>
+
+  <h2 class="text-center">Mennyit szeretnél felrakni a jelenlegi pontjaidból?</h2>
+  <div>
+    <form #gameForm="ngForm" *ngIf="player">
+      <input [(ngModel)]="betSize" name="bet" type="number" class="form-control" id="bet" required
+        class="col-4 offset-4" min="1" [max]="score">
+      <h2></h2>
+      <mat-slider name="bet" class="col-12 form-control" thumbLabel step="1" min="1" [max]="score"
+        (change)="onSetBet($event)" [(ngModel)]="betSize">
+      </mat-slider>
+
+      <div class=" d-flex flex-md-row flex-column justify-content-center align-item-center m-3">
+        <input class="h2 btn btn-info confirm-ok mr-0 mr-md-3 btn-md-block" type="button" value="Kezdhetjük!"
+          [disabled]="betSize <= 0 || betSize > score" [mat-dialog-close]="true" (click)="onSave(player)">
+        <input class="btn btn-danger confirm-cancel btn-md-block" type="button" value="Másik témakört választok"
+          [mat-dialog-close]="false">
+      </div>
+    </form>
+  </div>
+
+</div>
