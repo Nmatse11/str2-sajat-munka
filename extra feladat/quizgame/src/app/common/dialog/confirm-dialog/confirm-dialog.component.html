@@ -45,7 +45,7 @@
 
       <div class=" d-flex flex-md-row flex-column justify-content-center align-item-center m-3">
         <input class="h2 btn btn-info confirm-ok mr-0 mr-md-3 btn-md-block" type="button" value="Kezdhetjük!"
-          [disabled]="betSize <= 0 || betSize > score" [mat-dialog-close]="true" (click)="onSave(player)">
+          [disabled]="betSize <= 0 || betSize > score-1" [mat-dialog-close]="true" (click)="onSave(player)">
         <input class="btn btn-danger confirm-cancel btn-md-block" type="button" value="Másik témakört választok"
           [mat-dialog-close]="false">
       </div>

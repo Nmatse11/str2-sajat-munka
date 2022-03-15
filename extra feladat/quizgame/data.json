@@ -2,126 +2,9 @@
   "player": [
     {
       "id": 1,
-      "name": "Jane Doe",
       "random": false,
       "gamelevel": 1,
-      "start_score": 3000,
-      "end_score": 1,
-      "allOfRound": 10,
-      "round": 2,
-      "cat1": {
-        "id": 5,
-        "name": "history",
-        "nameHUN": "Történelem",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "cat2": {
-        "id": 7,
-        "name": "geography",
-        "nameHUN": "Földrajz",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "cat3": {
-        "id": 4,
-        "name": "movie",
-        "nameHUN": "Filmek",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "cat4": {
-        "id": 8,
-        "name": "image",
-        "nameHUN": "Képfelismerés",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "cat5": {
-        "id": 6,
-        "name": "disney",
-        "nameHUN": "Disney",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "cat6": {
-        "id": 9,
-        "name": "grammar",
-        "nameHUN": "Nyelvtan",
-        "selected": true,
-        "sumOfNumberLevel1": 10,
-        "sumOfNumberLevel2": 10,
-        "sumOfNumberLevel3": 10,
-        "usedLevel1": false,
-        "usedLevel2": false,
-        "usedLevel3": false,
-        "winNumberLevel3": 0,
-        "winNumberLevel2": 0,
-        "winNumberLevel1": 0
-      },
-      "category": "history",
-      "hunCategory": "Történelem",
-      "questionlevel": 1,
-      "bet": 0,
-      "win": [
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
-      "score": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
+      "allOfRound": 10
     }
   ],
   "toplist": [
@@ -258,12 +141,12 @@
       "sumOfNumberLevel1": 10,
       "sumOfNumberLevel2": 10,
       "sumOfNumberLevel3": 10,
-      "usedLevel1": true,
+      "usedLevel1": false,
       "usedLevel2": false,
       "usedLevel3": false,
       "winNumberLevel3": 0,
       "winNumberLevel2": 0,
-      "winNumberLevel1": 1
+      "winNumberLevel1": 0
     },
     {
       "id": 6,
@@ -2170,7 +2053,7 @@
         "válasz4"
       ],
       "correctanswer": 1,
-      "disabled": true
+      "disabled": false
     },
     {
       "id": 122,
@@ -2185,7 +2068,7 @@
         "válasz4"
       ],
       "correctanswer": 1,
-      "disabled": true
+      "disabled": false
     },
     {
       "id": 123,
@@ -2200,7 +2083,7 @@
         "válasz4"
       ],
       "correctanswer": 1,
-      "disabled": true
+      "disabled": false
     },
     {
       "id": 124,
@@ -2215,7 +2098,7 @@
         "válasz4"
       ],
       "correctanswer": 1,
-      "disabled": true
+      "disabled": false
     },
     {
       "id": 125,
@@ -2230,7 +2113,7 @@
         "válasz4"
       ],
       "correctanswer": 1,
-      "disabled": true
+      "disabled": false
     },
     {
       "id": 126,
