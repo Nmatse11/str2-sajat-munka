@@ -37,10 +37,10 @@
   <div>
     <form #gameForm="ngForm" *ngIf="player">
       <input [(ngModel)]="betSize" name="bet" type="number" class="form-control" id="bet" required
-        class="col-4 offset-4" min=1 [max]="score">
+        class="col-4 offset-4" min=1 [max]="score-1">
       <h2></h2>
-      <mat-slider name="bet" class="col-12 form-control" thumbLabel step=1 min=1 [max]="score"
-        (change)="onSetBet($event)" [(ngModel)]="betSize">
+      <mat-slider name="bet" class="col-12 form-control" thumbLabel step=1 min=1 [max]="score-1"
+        (change)="onSetBet($event)" [(ngModel)]="betSize" [hidden]="score === 1">
       </mat-slider>
 
       <div class=" d-flex flex-md-row flex-column justify-content-center align-item-center m-3">
