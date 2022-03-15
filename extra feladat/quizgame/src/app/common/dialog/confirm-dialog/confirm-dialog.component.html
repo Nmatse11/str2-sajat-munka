@@ -37,9 +37,9 @@
   <div>
     <form #gameForm="ngForm" *ngIf="player">
       <input [(ngModel)]="betSize" name="bet" type="number" class="form-control" id="bet" required
-        class="col-4 offset-4" min="1" [max]="score">
+        class="col-4 offset-4" min=1 [max]="score">
       <h2></h2>
-      <mat-slider name="bet" class="col-12 form-control" thumbLabel step="1" min="1" [max]="score"
+      <mat-slider name="bet" class="col-12 form-control" thumbLabel step=1 min=1 [max]="score"
         (change)="onSetBet($event)" [(ngModel)]="betSize">
       </mat-slider>
 

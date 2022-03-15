@@ -111,6 +111,9 @@
           </div>
         </fieldset>
 
+        <div [hidden]="this.checkbox.checked != true || step === 6" class="error-message text-danger text-center">
+          Legalább 6 témakört ki kell választanod!
+        </div>
         <div class="d-flex justify-content-center align-item-center m-3">
           <input
             [disabled]="numberAllOfRound < 10 || this.checkbox.checked === true && selectedRoundNumber < 10
